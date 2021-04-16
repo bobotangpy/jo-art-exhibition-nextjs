@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { SRLWrapper } from "simple-react-lightbox";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
-import styles from "../styles/AdultsLens.module.scss";
+import styles from "../../styles/AdultsLens.module.scss";
+import ReactFancyBox from "react-fancybox";
+import "react-fancybox/lib/fancybox.css";
 
 const options = {
   settings: {
@@ -35,7 +37,7 @@ export default function AdultsLens() {
   const caption = (details) => {
     //   FIXME: new paragraph
     return `
-        ${details.title}, ${details.year}, ${details.medium} <br />
+        ${details.title}, ${details.year}, ${details.medium}
         ${details.description}
         `;
   };
@@ -53,6 +55,11 @@ export default function AdultsLens() {
           <p>Through Adult's Lens</p>
         </Breadcrumbs>
         <header className="pageTitle">Through Adult's Lens</header>
+
+        <ReactFancyBox
+          thumbnail="https://loremflickr.com/320/240"
+          image="https://www.w3schools.com/howto/img_forest.jpg"
+        />
 
         <SRLWrapper setting={options}>
           {artworkData &&

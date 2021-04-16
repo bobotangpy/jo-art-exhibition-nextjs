@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import Accordion from "@material-ui/core/Accordion";
@@ -10,7 +10,7 @@ import BrushIcon from "@material-ui/icons/Brush";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import MoreIcon from "@material-ui/icons/More";
 import { Category } from "@material-ui/icons";
-import styles from "../styles/ChildrensLens.module.scss";
+import styles from "../../styles/ChildrensLens.module.scss";
 
 const linkStyle = {
   padding: "10px 20px",

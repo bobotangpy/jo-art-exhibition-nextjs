@@ -9,6 +9,7 @@ import styles from "../styles/Home.module.scss";
 
 - local & global response !!!
 - transcript
+- fix nav active link style
 - children lens
 - captions in adults gallery
 */

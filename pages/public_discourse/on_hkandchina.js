@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer";
-import VideoLayout from "../components/VideoLayout";
+import Footer from "../../components/Footer";
+import VideoLayout from "../../components/VideoLayout";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 
