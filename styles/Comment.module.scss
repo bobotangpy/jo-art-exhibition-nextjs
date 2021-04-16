@@ -1,0 +1,57 @@
+$heading: "Prata", "san-serif";
+$body: "Muli", "san-serif";
+
+$dark-blue: #2d3757;
+$mild-blue: #88cbdb;
+$bright-blue: #96cad9;
+$bg-blue: #d8e2ef;
+$text-blue: #33699f;
+$darker-red: #e07e71;
+$mild-red: #eca499;
+$bg-red: #d26a5f;
+$text-red: #fff1f0;
+$light-yellow: #fffcde;
+$grey: #f0f3fb;
+
+$bg-color: #fafafa;
+$text-color: #13130d;
+
+.form {
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.input,
+.textarea {
+  min-width: 350px;
+  min-height: 35px;
+  font-family: "Lato";
+}
+
+.input {
+  padding: 0 10px;
+  font-size: inherit;
+}
+
+.textarea {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.submit {
+  background-color: $text-blue;
+  color: $bg-blue;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.commentSection {
+  margin-top: 20px;
+}

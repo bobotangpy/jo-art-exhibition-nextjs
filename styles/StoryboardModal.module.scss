@@ -1,0 +1,51 @@
+$heading: "Prata", "san-serif";
+$body: "Muli", "san-serif";
+
+$dark-blue: #2d3757;
+$mild-blue: #88cbdb;
+$bright-blue: #96cad9;
+$bg-blue: #d8e2ef;
+$text-blue: #33699f;
+$darker-red: #e07e71;
+$mild-red: #eca499;
+$bg-red: #d26a5f;
+$text-red: #fff1f0;
+$light-yellow: #fffcde;
+$grey: #f0f3fb;
+
+$bg-color: #fafafa;
+$text-color: #13130d;
+
+.modal {
+  // color: #41413a;
+  color: $text-color;
+  background-color: $bg-color;
+  line-height: 1.3em;
+  min-width: 70%;
+  height: 80%;
+  padding: 20px 50px;
+  // border-radius: 10px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.modal:focus {
+  outline: none !important;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 2.5%;
+  right: 11%;
+  color: #fff;
+  cursor: pointer;
+}

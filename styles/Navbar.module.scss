@@ -1,0 +1,77 @@
+$heading: "Prata", "san-serif";
+$body: "Muli", "san-serif";
+
+$dark-blue: #2d3757;
+$mild-blue: #88cbdb;
+$bright-blue: #96cad9;
+$bg-blue: #d8e2ef;
+$text-blue: #33699f;
+$darker-red: #e07e71;
+$mild-red: #eca499;
+$bg-red: #d26a5f;
+$text-red: #fff1f0;
+$light-yellow: #fffcde;
+$grey: #f0f3fb;
+
+$bg-color: #fafafa;
+$text-color: #13130d;
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  height: 70px;
+  background-color: $dark-blue;
+  color: $bg-color;
+
+  p {
+    color: $bg-color;
+    font-family: "Prata";
+    font-size: 16px;
+    font-weight: 100;
+    padding: 10px 25px 10px;
+    margin-top: 0;
+  }
+
+  .menuIcon {
+    cursor: pointer;
+    font-size: 35px;
+    color: $bg-color;
+    padding: 15px 10px 15px;
+  }
+}
+
+.navModal {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+
+  .back {
+    justify-content: end;
+    cursor: pointer;
+    color: #ffffff;
+  }
+
+  .link {
+    text-align: center;
+    min-width: 50%;
+    padding: 10px 5px;
+    color: #ffffff;
+    a:visited {
+      color: $bright-blue;
+    }
+  }
+
+  .activeLink {
+    color: $bright-blue;
+  }
+}

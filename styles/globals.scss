@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Prata");
+@import url("https://fonts.googleapis.com/css?family=Muli");
+
+$heading: "Prata", "san-serif";
+$body: "Muli", "san-serif";
+
+$dark-blue: #2d3757;
+$mild-blue: #88cbdb;
+$bright-blue: #96cad9;
+$bg-blue: #d8e2ef;
+$text-blue: #33699f;
+$darker-red: #e07e71;
+$mild-red: #eca499;
+$bg-red: #d26a5f;
+$text-red: #fff1f0;
+$light-yellow: #fffcde;
+$grey: #f0f3fb;
+
+$bg-color: #fafafa;
+$text-color: #13130d;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button,
+a,
+input,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  transition: all 0.3s ease-in-out;
+  :hover {
+    background-color: $dark-blue;
+    color: $bg-color;
+    border-color: $dark-blue;
+  }
+}
+
+header {
+  font-family: $heading;
+}
+
+p {
+  font-family: $body;
+}
+
+.fadeIn {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.pageContent {
+  margin: 0;
+  padding: 25px 150px;
+  display: flex;
+  flex-direction: column;
+  // background-color: $bg-blue;
+  // color: $text-blue;
+  background-color: $bg-color;
+  color: $text-color;
+  // margin-bottom: 500px;
+  position: relative;
+
+  .pageTitle {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 30px 0 10px 0;
+  }
+
+  .textContent {
+    font-family: $body;
+    padding: 25px 0;
+    font-size: large;
+    line-height: 1.5em;
+  }
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 70px 0 30px 0;
+}
+
+// Artwork Lightbox
+.SRLControls {
+  .SRLAutoplayButton,
+  .SRLThumbnailsButton,
+  .SRLDownloadButton,
+  .SRLExpandButton {
+    display: none;
+  }
+}
+
+// Navbar Accordion
+.MuiAccordion-root:before {
+  display: none;
+}
+
+.navMenu .MuiPaper-root {
+  background-color: inherit !important;
+}
+
+.navMenu .MuiPaper-elevation1 {
+  box-shadow: none !important;
+}
+
+.MuiAccordionSummary-root {
+  min-height: 45px !important;
+}
+
+.MuiAccordionSummary-content {
+  margin: 0 !important;
+  justify-content: center;
+}
+
+.MuiAccordion-root.Mui-expanded {
+  margin: 5px 0 !important;
+}
+
+.MuiAccordionSummary-root.Mui-expanded {
+  min-height: 35px !important;
+}
+
+// Artwork - Children's Lens Accordion
+.childLensAccord .MuiAccordionDetails-root {
+  flex-direction: column;
+}
+
+// Public Discourse - VideoLayout
+.MuiCardMedia-media {
+  max-width: 50%;
+}
+.transcriptBtn {
+  background-color: $bg-color;
+  color: $dark-blue;
+  margin: 30px 15px;
+  padding: 15px 30px;
+  border: 2px solid $dark-blue;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $dark-blue;
+    color: $bg-color;
+    border-color: $dark-blue;
+  }
+}
+
+// Option Buttons - Artwork & Public Discourse
+.btnsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 40px;
+
+  .option {
+    margin: 15px;
+    padding: 20px 40px;
+    // border-radius: 4px;
+    border: none;
+    // font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+
+    background-color: $bg-color;
+    color: $dark-blue;
+    border-color: $dark-blue;
+    border-width: 2px;
+    border-style: solid;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $dark-blue;
+      color: $bg-color;
+      border-color: $dark-blue;
+    }
+  }
+}
+
+// Storyboard Card Btns
+.MuiButtonBase-root.MuiButton-root:hover {
+  background-color: transparent;
+}
+
+// TODO: @media

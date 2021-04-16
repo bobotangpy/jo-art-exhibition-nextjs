@@ -1,65 +1,97 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Footer from "../components/Footer";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import styles from "../styles/Home.module.scss";
+
+/* TODO:
+- @media
+
+- local & global response !!!
+- transcript
+- children lens
+- captions in adults gallery
+*/
+
+const sliderSetting = {
+  dots: true,
+  fade: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  // autoplay: true,
+  autoplaySpeed: 2500,
+  adaptiveHeight: false,
+};
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <>
+      <div style={{ margin: "0px auto", width: "auto", height: "800px" }}>
+        <div className={styles.landing}>
+          <header className={styles.title}>
+            Visualizing the Civic Identity Struggle in Hong Kong: <br />
+            An Art Exhibition
+          </header>
+          <Slider {...sliderSetting} className={styles.slider}>
+            <div className={styles.carouselCard}>
+              <img
+                src="/assets/homepage/1.jpeg"
+                alt="1"
+                object-fit="cover"
+                width="100%"
+                height="auto"
+              />
+            </div>
+            <div className={styles.carouselCard}>
+              <img
+                src="/assets/homepage/2.jpg"
+                alt="2"
+                object-fit="cover"
+                width="100%"
+                height="auto"
+              />
+            </div>
+            <div className={styles.carouselCard}>
+              <img
+                src="/assets/homepage/3.jpg"
+                alt="3"
+                object-fit="cover"
+                width="100%"
+                height="auto"
+              />
+            </div>
+            <div className={styles.carouselCard}>
+              <img
+                src="/assets/homepage/4.jpg"
+                alt="4"
+                object-fit="cover"
+                width="100%"
+                height="auto"
+              />
+            </div>
+            <div className={styles.carouselCard}>
+              <img
+                src="/assets/homepage/5.jpg"
+                alt="5"
+                object-fit="cover"
+                width="100%"
+                height="auto"
+              />
+            </div>
+            <div className={styles.carouselCard}>
+              <img
+                src="/assets/homepage/6.jpg"
+                alt="6"
+                object-fit="fill"
+                width="100%"
+                height="auto"
+              />
+            </div>
+          </Slider>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      </div>
+      {/* <Footer /> */}
+    </>
+  );
 }
