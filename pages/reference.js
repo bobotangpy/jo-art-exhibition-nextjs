@@ -25,7 +25,7 @@ export default function Reference() {
         <header className="pageTitle">Reference</header>
 
         <div className="textContent">
-          {data && data.split("##").map((line) => (
+          {ref && ref.split("##").map((line) => (
             <p key={line}>{line}</p>
           ))}
         </div>
