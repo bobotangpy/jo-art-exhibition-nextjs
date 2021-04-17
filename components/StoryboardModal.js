@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Modal, Divider, Fade, Backdrop } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
-import styles from "../style/StoryboardModal.module.scss";
+import styles from "../styles/StoryboardModal.module.scss";
 
 export default function StoryboardModal({ openModal, handleOpenModal, data }) {
   const [open, setOpen] = useState(false);
