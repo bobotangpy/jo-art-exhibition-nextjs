@@ -4,13 +4,28 @@ import VideoLayout from "../../components/VideoLayout";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 
-export default function OnHkAndChina({ data }) {
+export default function OnHkAndChina() {
   const [pageData, setPageData] = useState("");
 
   useEffect(() => {
-    if (data) console.log(data);
-    setPageData(data);
+    getData();
+    // if (data) setPageData(data);
   }, []);
+
+  const getData = () => {
+    const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
+    const getData = await fetch(url);
+    const res = await getData.json();
+    let data;
+
+    if (res) {
+      for (const [key, val] of Object.entries(res)) {
+        if (key === "hkchina") {
+          setPageData(val);
+        }
+      }
+    }
+  }
 
   return (
     <>
@@ -36,23 +51,23 @@ export default function OnHkAndChina({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
-  const getData = await fetch(url);
-  const res = await getData.json();
-  let data;
+// export async function getStaticProps() {
+//   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
+//   const getData = await fetch(url);
+//   const res = await getData.json();
+//   let data;
 
-  if (res) {
-    for (const [key, val] of Object.entries(res)) {
-      if (key === "hkchina") {
-        data = val;
-      }
-    }
-  }
+//   if (res) {
+//     for (const [key, val] of Object.entries(res)) {
+//       if (key === "hkchina") {
+//         data = val;
+//       }
+//     }
+//   }
 
-  return {
-    props: {
-      data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }

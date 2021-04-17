@@ -4,12 +4,28 @@ import VideoLayout from "../../components/VideoLayout";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 
-export default function OnEducation({ data }) {
+export default function OnEducation() {
   const [pageData, setPageData] = useState("");
 
   useEffect(() => {
-    if (data) setPageData(data);
+    getData();
+    // if (data) setPageData(data);
   }, []);
+
+  const getData = () => {
+    const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
+    const getData = await fetch(url);
+    const res = await getData.json();
+    let data;
+
+    if (res) {
+      for (const [key, val] of Object.entries(res)) {
+        if (key === "edu") {
+          setPageData(val);
+        }
+      }
+    }
+  }
 
   return (
     <>
@@ -35,23 +51,23 @@ export default function OnEducation({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
-  const getData = await fetch(url);
-  const res = await getData.json();
-  let data;
+// export async function getStaticProps() {
+//   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
+//   const getData = await fetch(url);
+//   const res = await getData.json();
+//   let data;
 
-  if (res) {
-    for (const [key, val] of Object.entries(res)) {
-      if (key === "edu") {
-        data = val;
-      }
-    }
-  }
+//   if (res) {
+//     for (const [key, val] of Object.entries(res)) {
+//       if (key === "edu") {
+//         data = val;
+//       }
+//     }
+//   }
 
-  return {
-    props: {
-      data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }

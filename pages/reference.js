@@ -1,10 +1,23 @@
 // import { useEffect } from "react";
+import { setRef } from "@material-ui/core";
+import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 
-export default function Reference({ data }) {
-//   useEffect(() => {
-//     console.log(data);
-//   }, []);
+export default function Reference() {
+  const [ref, setRef] = useState(null);
+
+  useEffect(() => {
+    // console.log(data);
+    getData()
+  }, []);
+
+  const getData = () => {
+    const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
+    const getData = await fetch(url);
+    const data = await getData.text();
+
+    if (data) setRef(data);
+  }
 
   return (
     <>
@@ -12,7 +25,7 @@ export default function Reference({ data }) {
         <header className="pageTitle">Reference</header>
 
         <div className="textContent">
-          {data.split("##").map((line) => (
+          {data && data.split("##").map((line) => (
             <p key={line}>{line}</p>
           ))}
         </div>
@@ -22,14 +35,14 @@ export default function Reference({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
-  const getData = await fetch(url);
-  const data = await getData.text();
+// export async function getStaticProps() {
+//   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
+//   const getData = await fetch(url);
+//   const data = await getData.text();
 
-  return {
-    props: {
-      data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }
