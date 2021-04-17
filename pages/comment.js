@@ -5,7 +5,7 @@ import Disqus from "disqus-react";
 
 const disqusShortname = "visualizing-civic-identity-struggle-in-hk";
 const disqusConfig = {
-  url: "http://localhost:3000",
+  url: "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/",
   identifier: "comment",
   title: "Comment Page",
 };

@@ -37,7 +37,7 @@ export default function OnHkAndChina({ data }) {
 }
 
 export async function getStaticProps() {
-  const url = "http://localhost:3000/assets/_data/videoData.json";
+  const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
   const getData = await fetch(url);
   const res = await getData.json();
   let data;

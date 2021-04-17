@@ -23,7 +23,7 @@ export default function Reference({ data }) {
 }
 
 export async function getStaticProps() {
-  const url = "http://localhost:3000/assets/_data/Reference.txt";
+  const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
   const getData = await fetch(url);
   const data = await getData.text();
 

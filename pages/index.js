@@ -6,7 +6,6 @@ import styles from "../styles/Home.module.scss";
 
 /* TODO:
 - @media
-
 - local & global response !!!
 - captions in adults gallery
 */
