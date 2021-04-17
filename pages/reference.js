@@ -11,7 +11,7 @@ export default function Reference() {
     getData()
   }, []);
 
-  const getData = () => {
+  const getData = async () => {
     const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
     const getData = await fetch(url);
     const data = await getData.text();

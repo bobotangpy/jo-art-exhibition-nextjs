@@ -35,7 +35,7 @@ export default function LocalGlobalResponse({
     if (images) console.log(images);
   }, [images]);
 
-  const getData = () => {
+  const getData = async () => {
     const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/localGlobalImages.json";
     const getData = await fetch(url);
     const data = await getData.json();

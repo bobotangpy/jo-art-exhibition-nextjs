@@ -12,7 +12,7 @@ export default function OnHkAndChina() {
     // if (data) setPageData(data);
   }, []);
 
-  const getData = () => {
+  const getData = async () => {
     const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
     const getData = await fetch(url);
     const res = await getData.json();
