@@ -18,12 +18,12 @@ const customStyle = `
     $bg-color: #fafafa;
     $text-color: #13130d;
     `;
-    
-const dev = process.env.NODE_ENV !== "production";
 
-export const server = dev
-  ? "http://localhost:3000"
-  : "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/";
+// const dev = process.env.NODE_ENV !== "production";
+
+// export const server = dev
+//   ? "http://localhost:3000"
+//   : "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/";
 
 module.exports = {
   //   loaders: [
