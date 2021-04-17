@@ -15,13 +15,13 @@ const cardStyle = {
 
 export default function VideoLayout({ data }) {
   //   const [vidData, setVidData] = useState("");
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     if (data) {
-      console.log(data);
+      // console.log(data);
       data.map((item) => {
-        console.log(item.transcription);
+        // console.log(item.transcription);
         if (item.transcription) {
           console.log("transcript", item.transcription);
         }

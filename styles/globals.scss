@@ -116,6 +116,13 @@ p {
     display: none;
   }
 }
+.SRLCaptionText {
+  padding: 0 100px;
+  line-height: 1.4em;
+}
+.SRLThumbnailsContainer{
+  display: none !important;
+}
 
 // Home Slick Slider
 .slick-slider {

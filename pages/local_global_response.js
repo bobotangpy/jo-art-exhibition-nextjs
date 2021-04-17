@@ -18,7 +18,6 @@ export default function LocalGlobalResponse({
 
   useEffect(() => {
     if (data) {
-      // console.log(, identity, art, migration, education);
       setiDentity(identityData);
       setArt(artData);
       setMigration(migrationData);

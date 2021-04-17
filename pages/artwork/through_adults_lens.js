@@ -4,8 +4,6 @@ import Footer from "../../components/Footer";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import styles from "../../styles/AdultsLens.module.scss";
-// import ReactFancyBox from "react-fancybox";
-// import "react-fancybox/lib/fancybox.css";
 
 const options = {
   settings: {
@@ -15,8 +13,12 @@ const options = {
   caption: {
     captionFontSize: "18px",
   },
-  buttons: {},
-  thumbnails: {},
+  buttons: {
+    showThumbnailsButton: false,
+  },
+  thumbnails: {
+    showThumbnails: false,
+  },
   progressBar: {},
 };
 
@@ -37,9 +39,9 @@ export default function AdultsLens() {
   const caption = (details) => {
     //   FIXME: new paragraph
     return `
-        ${details.title}, ${details.year}, ${details.medium} \n
-        ${details.description}
-        `;
+    ${details.description}
+    `;
+    // ${details.title}, ${details.year}, ${details.medium}
   };
 
   return (
@@ -56,32 +58,18 @@ export default function AdultsLens() {
         </Breadcrumbs>
         <header className="pageTitle">Through Adult's Lens</header>
 
-        {/* {artworkData &&
-          Object.values(artworkData).map((author, index) =>
-            author.map((work, index) => (
-              <ReactFancyBox
-                key={index}
-                // thumbnail="https://loremflickr.com/320/240"
-                image={work.src}
-                defaultThumbnailWidth={360}
-                defaultThumbnailHeight={240}
-                caption={caption(work)}
-              />
-            ))
-          )} */}
-
         <SRLWrapper setting={options}>
           {artworkData &&
             Object.values(artworkData).map((author, index) => (
               <div className={styles.wrapper} key={index}>
                 {author.map((work, index) => (
-                  <a href={work.src} key={index} >
+                  <a href={work.src} key={index}>
                     {work.medium !== "video" ? (
                       <img
                         src={work.src}
                         alt={caption(work)}
-                        width={260}
-                        height={190}
+                        width={280}
+                        height={185}
                         objectfit="contain"
                         srl_gallery_image="true"
                       />
@@ -96,7 +84,9 @@ export default function AdultsLens() {
                       ></iframe>
                     )}
                     <br />
-                    <label>{`${work.title}, ${work.medium}`}</label>
+                    <label>{`${work.title}, `}</label>
+                    <br />
+                    <label>{`${work.medium}`}</label>
                   </a>
                 ))}
 
