@@ -4,29 +4,12 @@ import VideoLayout from "../../components/VideoLayout";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 
-export default function OnEducation() {
-  const [data, setData] = useState("");
+export default function OnEducation({ data }) {
+  const [pageData, setPageData] = useState("");
 
   useEffect(() => {
-    getData();
+    if (data) setPageData(data);
   }, []);
-
-  useEffect(() => {
-    if (data) console.log(data);
-  }, [data]);
-
-  const getData = async () => {
-    const getData = await fetch("/assets/_data/videoData.json");
-    const res = await getData.json();
-
-    if (res) {
-      for (const [key, val] of Object.entries(res)) {
-        if (key === "edu") {
-          setData(val);
-        }
-      }
-    }
-  };
 
   return (
     <>
@@ -44,10 +27,31 @@ export default function OnEducation() {
         <header className="pageTitle">On Education</header>
 
         <div className="textContent" style={{ marginTop: "20px" }}>
-          <VideoLayout data={data} />
+          <VideoLayout data={pageData} />
         </div>
       </div>
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const url = "http://localhost:3000/assets/_data/videoData.json";
+  const getData = await fetch(url);
+  const res = await getData.json();
+  let data;
+
+  if (res) {
+    for (const [key, val] of Object.entries(res)) {
+      if (key === "edu") {
+        data = val;
+      }
+    }
+  }
+
+  return {
+    props: {
+      data,
+    },
+  };
 }

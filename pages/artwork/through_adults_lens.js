@@ -4,8 +4,8 @@ import Footer from "../../components/Footer";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import styles from "../../styles/AdultsLens.module.scss";
-import ReactFancyBox from "react-fancybox";
-import "react-fancybox/lib/fancybox.css";
+// import ReactFancyBox from "react-fancybox";
+// import "react-fancybox/lib/fancybox.css";
 
 const options = {
   settings: {
@@ -37,7 +37,7 @@ export default function AdultsLens() {
   const caption = (details) => {
     //   FIXME: new paragraph
     return `
-        ${details.title}, ${details.year}, ${details.medium}
+        ${details.title}, ${details.year}, ${details.medium} \n
         ${details.description}
         `;
   };
@@ -56,23 +56,32 @@ export default function AdultsLens() {
         </Breadcrumbs>
         <header className="pageTitle">Through Adult's Lens</header>
 
-        <ReactFancyBox
-          thumbnail="https://loremflickr.com/320/240"
-          image="https://www.w3schools.com/howto/img_forest.jpg"
-        />
+        {/* {artworkData &&
+          Object.values(artworkData).map((author, index) =>
+            author.map((work, index) => (
+              <ReactFancyBox
+                key={index}
+                // thumbnail="https://loremflickr.com/320/240"
+                image={work.src}
+                defaultThumbnailWidth={360}
+                defaultThumbnailHeight={240}
+                caption={caption(work)}
+              />
+            ))
+          )} */}
 
         <SRLWrapper setting={options}>
           {artworkData &&
             Object.values(artworkData).map((author, index) => (
               <div className={styles.wrapper} key={index}>
                 {author.map((work, index) => (
-                  <a href={work.src} key={index} target="_blank">
+                  <a href={work.src} key={index} >
                     {work.medium !== "video" ? (
                       <img
                         src={work.src}
                         alt={caption(work)}
-                        width={360}
-                        height={240}
+                        width={260}
+                        height={190}
                         objectfit="contain"
                         srl_gallery_image="true"
                       />

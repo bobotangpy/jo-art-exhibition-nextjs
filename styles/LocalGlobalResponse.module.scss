@@ -1,0 +1,94 @@
+$heading: "Prata", "san-serif";
+$body: "Muli", "san-serif";
+
+$dark-blue: #2d3757;
+$mild-blue: #88cbdb;
+$bright-blue: #96cad9;
+$bg-blue: #d8e2ef;
+$text-blue: #33699f;
+$darker-red: #e07e71;
+$mild-red: #eca499;
+$bg-red: #d26a5f;
+$text-red: #fff1f0;
+$light-yellow: #fffcde;
+$grey: #f0f3fb;
+
+$bg-color: #fafafa;
+$text-color: #13130d;
+
+.container {
+  position: relative;
+  //   width: 100vw;
+  height: 500px;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: #f3f3f3;
+  color: #000000;
+  font-size: 23vw;
+  font-weight: 900;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+
+  &:hover {
+    animation: fadeOut 2s;
+    -webkit-animation: fadeOut 2s;
+    -moz-animation: fadeOut 2s;
+    -o-animation: fadeOut 2s;
+    -ms-animation: fadeOut 2s;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hideDiv {
+  display: none;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  //   align-items: center;
+  width: 100%;
+  margin: 0;
+
+  table.table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin: 0;
+
+    td {
+      padding: 0;
+    }
+  }
+
+  table.art:hover {
+    background-color: violet;
+  }
+}
+
+
+.test {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+}

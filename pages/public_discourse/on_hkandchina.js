@@ -4,29 +4,13 @@ import VideoLayout from "../../components/VideoLayout";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 
-export default function OnHkAndChina() {
-  const [data, setData] = useState("");
-
-  useEffect(() => {
-    getData();
-  }, []);
+export default function OnHkAndChina({ data }) {
+  const [pageData, setPageData] = useState("");
 
   useEffect(() => {
     if (data) console.log(data);
-  }, [data]);
-
-  const getData = async () => {
-    const getData = await fetch("/assets/_data/videoData.json");
-    const res = await getData.json();
-
-    if (res) {
-      for (const [key, val] of Object.entries(res)) {
-        if (key === "hkchina") {
-          setData(val);
-        }
-      }
-    }
-  };
+    setPageData(data);
+  }, []);
 
   return (
     <>
@@ -44,11 +28,31 @@ export default function OnHkAndChina() {
         <header className="pageTitle">On Hong Kong and China</header>
 
         <div className="textContent" style={{ marginTop: "20px" }}>
-          <VideoLayout  data={data} />
+          <VideoLayout data={pageData} />
         </div>
       </div>
       <Footer />
     </>
   );
 }
-ƒ
+
+export async function getStaticProps() {
+  const url = "http://localhost:3000/assets/_data/videoData.json";
+  const getData = await fetch(url);
+  const res = await getData.json();
+  let data;
+
+  if (res) {
+    for (const [key, val] of Object.entries(res)) {
+      if (key === "hkchina") {
+        data = val;
+      }
+    }
+  }
+
+  return {
+    props: {
+      data,
+    },
+  };
+}

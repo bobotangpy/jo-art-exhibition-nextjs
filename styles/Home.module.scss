@@ -1,3 +1,21 @@
+$heading: "Prata", "san-serif";
+$body: "Muli", "san-serif";
+
+$dark-blue: #2d3757;
+$mild-blue: #88cbdb;
+$bright-blue: #96cad9;
+$bg-blue: #d8e2ef;
+$text-blue: #33699f;
+$darker-red: #e07e71;
+$mild-red: #eca499;
+$bg-red: #d26a5f;
+$text-red: #fff1f0;
+$light-yellow: #fffcde;
+$grey: #f0f3fb;
+
+$bg-color: #fafafa;
+$text-color: #13130d;
+
 .container {
   margin: 0px auto;
   width: auto;
@@ -7,34 +25,34 @@
 .landing {
   position: relative;
   width: 100%;
-  // z-index: 1300;
-  // inset: 0px;
-  // background-color: rgba(250, 250, 250, 0.3);
-  // -webkit-tap-highlight-color: transparent;
-
+  // background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
     .slider {
-    // width: 100%;
-    // height: 50%;
-
     .carouselCard {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      object-fit: cover !important;
     }
   }
 }
 header.title {
-  // flex: 0 0 120px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
 
-  font-size: x-large;
-  // text-align: center;
-  // z-index: 1400;
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50% -50%);
+  color: $grey;
+  padding: 0 20px;
+  width: 100%;
+  font-size: 30px;
+  z-index: 1400;
+  position: absolute;
+  top: 35%;
 }
 
 .slick-slider {
   max-height: 800px !important;
+}
+
+.overlay {
+  height: 800px;
+  opacity: 0.75;
+  // background: rgba(0, 0, 0, 0.6);
 }

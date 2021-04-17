@@ -66,12 +66,12 @@ $text-color: #13130d;
     min-width: 50%;
     padding: 10px 5px;
     color: #ffffff;
-    a:active {
-      color: $bright-blue;
-    }
   }
 
   .activeLink {
+    text-align: center;
+    min-width: 50%;
+    padding: 10px 5px;
     color: $bright-blue;
   }
 }

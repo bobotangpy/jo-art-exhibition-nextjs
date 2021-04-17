@@ -13,46 +13,21 @@ const cardStyle = {
   fontWeight: "normal",
 };
 
-// const btnStyle = {
-//   backgroundColor: "#2d3757",
-//   color: "#fafafa",
-//   margin: "30px 15px",
-//   padding: "20px 30px",
-//   borderRadius: "4px",
-//   border: "none",
-//   fontWeight: "bold",
-//   fontSize: "14px",
-//   cursor: "pointer",
-// };
-
 export default function VideoLayout({ data }) {
   //   const [vidData, setVidData] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     if (data) {
+      console.log(data);
       data.map((item) => {
-        if (item.transcription && !Array.isArray(item.transcription)) {
-          console.log(item.transcription);
-          getTranscript(item.transcription);
+        console.log(item.transcription);
+        if (item.transcription) {
+          console.log("transcript", item.transcription);
         }
       });
     }
   }, []);
-
-  //   TODO: open transcript in new window
-  const handleBtnClick = () => {
-    setOpenModal(true);
-  };
-
-  const getTranscript = async (src) => {
-    console.log(src);
-    fetch(src)
-      .then((res) => res.text())
-      .then((script) => console.log(script));
-
-    // if (res) console.log(res);
-  };
 
   return (
     data &&
@@ -79,9 +54,11 @@ export default function VideoLayout({ data }) {
             ))} */}
 
             {item.transcription ? (
-              <button className="transcriptBtn" onClick={handleBtnClick}>
-                See Transciption
-              </button>
+              <a href={item.transcription} target="_blank">
+                <button className="transcriptBtn">
+                  See Transciption
+                </button>
+              </a>
             ) : (
               <></>
             )}

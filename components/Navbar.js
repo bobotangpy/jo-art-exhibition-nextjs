@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { Fade } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -29,6 +30,7 @@ const accordionStyle = {
 };
 
 export default function Navbar() {
+  const router = useRouter();
   const [openMenu, setOpenMenu] = useState(false);
 
   const handleOpenMenu = () => {
@@ -46,10 +48,12 @@ export default function Navbar() {
       </Head>
 
       <nav className={styles.navbar}>
-        <p>
-          Visualizing the Civic Identity Struggle in Hong Kong: <br />
-          An Art Exhibition
-        </p>
+        <a href="/">
+          <p>
+            Visualizing the Civic Identity Struggle in Hong Kong: <br />
+            An Art Exhibition
+          </p>
+        </a>
         <MenuIcon className={styles.menuIcon} onClick={handleOpenMenu} />
       </nav>
 
@@ -71,18 +75,24 @@ export default function Navbar() {
             <div className={`${styles.menu} navMenu`}>
               <CloseIcon className={styles.back} onClick={handleOpenMenu} />
 
-              <Link
-                href="/"
-                exact
-                onClick={handleOpenMenu}
-              >
-                <a className={styles.link} activeclassname={styles.activeLink}>
+              <Link href="/" exact onClick={handleOpenMenu}>
+                <a
+                  className={
+                    router.pathname == "/" ? styles.activeLink : styles.link
+                  }
+                >
                   Home
                 </a>
               </Link>
 
               <Link href="/background" onClick={handleOpenMenu}>
-                <a className={styles.link} activeclassname={styles.activeLink}>
+                <a
+                  className={
+                    router.pathname == "/background"
+                      ? styles.activeLink
+                      : styles.link
+                  }
+                >
                   Background
                 </a>
               </Link>
@@ -99,8 +109,11 @@ export default function Navbar() {
                 >
                   <Link href="/public_discourse" onClick={handleOpenMenu}>
                     <a
-                      className={styles.link}
-                      activeclassname={styles.activeLink}
+                      className={
+                        router.pathname == "/public_discourse"
+                          ? styles.activeLink
+                          : styles.link
+                      }
                     >
                       Public Discourse
                     </a>
@@ -112,8 +125,11 @@ export default function Navbar() {
                     onClick={handleOpenMenu}
                   >
                     <a
-                      className={styles.link}
-                      activeclassname={styles.activeLink}
+                      className={
+                        router.pathname == "/public_discourse/on_education"
+                          ? styles.activeLink
+                          : styles.link
+                      }
                     >
                       On Education
                     </a>
@@ -124,8 +140,11 @@ export default function Navbar() {
                     onClick={handleOpenMenu}
                   >
                     <a
-                      className={styles.link}
-                      activeclassname={styles.activeLink}
+                      className={
+                        router.pathname == "/public_discourse/on_hkandchina"
+                          ? styles.activeLink
+                          : styles.link
+                      }
                     >
                       On Hong Kong and China
                     </a>
@@ -145,8 +164,11 @@ export default function Navbar() {
                 >
                   <Link href="/artwork" onClick={handleOpenMenu}>
                     <a
-                      className={styles.link}
-                      activeclassname={styles.activeLink}
+                      className={
+                        router.pathname == "/artwork"
+                          ? styles.activeLink
+                          : styles.link
+                      }
                     >
                       Artworks
                     </a>
@@ -158,20 +180,26 @@ export default function Navbar() {
                     onClick={handleOpenMenu}
                   >
                     <a
-                      className={styles.link}
-                      activeclassname={styles.activeLink}
+                      className={
+                        router.pathname == "/artwork/through_adults_lens"
+                          ? styles.activeLink
+                          : styles.link
+                      }
                     >
                       Through Adult's Lens
                     </a>
                   </Link>
 
                   <Link
-                    href="/a  rtwork/through_childrens_lens"
+                    href="/artwork/through_childrens_lens"
                     onClick={handleOpenMenu}
                   >
                     <a
-                      className={styles.link}
-                      activeclassname={styles.activeLink}
+                      className={
+                        router.pathname == "/artwork/through_childrens_lens"
+                          ? styles.activeLink
+                          : styles.link
+                      }
                     >
                       Through Children's Lens
                     </a>
@@ -180,25 +208,49 @@ export default function Navbar() {
               </Accordion>
 
               <Link href="/local_global_response" onClick={handleOpenMenu}>
-                <a className={styles.link} activeclassname={styles.activeLink}>
+                <a
+                  className={
+                    router.pathname == "/local_global_response"
+                      ? styles.activeLink
+                      : styles.link
+                  }
+                >
                   Local and Global Response
                 </a>
               </Link>
 
               <Link href="/interactive_storyboard" onClick={handleOpenMenu}>
-                <a className={styles.link} activeclassname={styles.activeLink}>
+                <a
+                  className={
+                    router.pathname == "/interactive_storyboard"
+                      ? styles.activeLink
+                      : styles.link
+                  }
+                >
                   Interactive Storyboard
                 </a>
               </Link>
 
               <Link href="/comment" onClick={handleOpenMenu}>
-                <a className={styles.link} activeclassname={styles.activeLink}>
+                <a
+                  className={
+                    router.pathname == "/comment"
+                      ? styles.activeLink
+                      : styles.link
+                  }
+                >
                   Comment
                 </a>
               </Link>
 
               <Link href="/reference" onClick={handleOpenMenu}>
-                <a className={styles.link} activeclassname={styles.activeLink}>
+                <a
+                  className={
+                    router.pathname == "/reference"
+                      ? styles.activeLink
+                      : styles.link
+                  }
+                >
                   Reference
                 </a>
               </Link>

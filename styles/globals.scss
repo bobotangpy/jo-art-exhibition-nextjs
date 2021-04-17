@@ -117,6 +117,41 @@ p {
   }
 }
 
+// Home Slick Slider
+.slick-slider {
+  .image {
+    object-fit: cover !important;
+  }
+  .slick-dots {
+    bottom: 20px !important;
+  }
+}
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  display: none !important;
+}
+.slick-dots li button:before {
+  opacity: 0.6 !important;
+  color: #fafafa !important;
+  font-size: 8px !important;
+}
+.slick-dots .slick-active button:before {
+  opacity: 1 !important;
+}
+.slick-slide::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  pointer-events: none;
+
+  /* black overlay with 50% transparency */
+  background: rgba(0, 0, 0, 0.2);
+}
+
 // Navbar Accordion
 .MuiAccordion-root:before {
   display: none;
@@ -132,6 +167,7 @@ p {
 
 .MuiAccordionSummary-root {
   min-height: 45px !important;
+  padding: 0px 16px 0 40px !important;
 }
 
 .MuiAccordionSummary-content {
@@ -206,5 +242,3 @@ p {
 .MuiButtonBase-root.MuiButton-root:hover {
   background-color: transparent;
 }
-
-// TODO: @media

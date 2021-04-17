@@ -8,9 +8,6 @@ import styles from "../styles/Home.module.scss";
 - @media
 
 - local & global response !!!
-- transcript
-- fix nav active link style
-- children lens
 - captions in adults gallery
 */
 
@@ -20,7 +17,7 @@ const sliderSetting = {
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  // autoplay: true,
+  autoplay: true,
   autoplaySpeed: 2500,
   adaptiveHeight: false,
 };
@@ -34,65 +31,78 @@ export default function Home() {
             Visualizing the Civic Identity Struggle in Hong Kong: <br />
             An Art Exhibition
           </header>
+
           <Slider {...sliderSetting} className={styles.slider}>
             <div className={styles.carouselCard}>
-              <img
-                src="/assets/homepage/1.jpeg"
-                alt="1"
-                object-fit="cover"
-                width="100%"
-                height="auto"
-              />
+              <div className={styles.overlay}>
+                <img
+                  className={styles.image}
+                  src="/assets/homepage/1.jpeg"
+                  alt="1"
+                  width="100%"
+                  height="800px"
+                />
+              </div>
             </div>
             <div className={styles.carouselCard}>
-              <img
-                src="/assets/homepage/2.jpg"
-                alt="2"
-                object-fit="cover"
-                width="100%"
-                height="auto"
-              />
+              <div className={styles.overlay}>
+                <img
+                  className={styles.image}
+                  src="/assets/homepage/2.jpg"
+                  alt="2"
+                  width="100%"
+                  height="800px"
+                />
+              </div>
             </div>
             <div className={styles.carouselCard}>
-              <img
-                src="/assets/homepage/3.jpg"
-                alt="3"
-                object-fit="cover"
-                width="100%"
-                height="auto"
-              />
+              <div className={styles.overlay}>
+                <img
+                  className={styles.image}
+                  src="/assets/homepage/3.jpg"
+                  alt="3"
+                  width="100%"
+                  height="800px"
+                />
+              </div>
             </div>
             <div className={styles.carouselCard}>
-              <img
-                src="/assets/homepage/4.jpg"
-                alt="4"
-                object-fit="cover"
-                width="100%"
-                height="auto"
-              />
+              <div className={styles.overlay}>
+                <img
+                  className={styles.image}
+                  src="/assets/homepage/4.jpg"
+                  alt="4"
+                  width="100%"
+                  height="800px"
+                />
+              </div>
             </div>
             <div className={styles.carouselCard}>
-              <img
-                src="/assets/homepage/5.jpg"
-                alt="5"
-                object-fit="cover"
-                width="100%"
-                height="auto"
-              />
+              <div className={styles.overlay}>
+                <img
+                  className={styles.image}
+                  src="/assets/homepage/5.jpg"
+                  alt="5"
+                  width="100%"
+                  height="800px"
+                />
+              </div>
             </div>
             <div className={styles.carouselCard}>
-              <img
-                src="/assets/homepage/6.jpg"
-                alt="6"
-                object-fit="fill"
-                width="100%"
-                height="auto"
-              />
+              <div className={styles.overlay}>
+                <img
+                  className={styles.image}
+                  src="/assets/homepage/6.jpg"
+                  alt="6"
+                  width="100%"
+                  height="800px"
+                />
+              </div>
             </div>
           </Slider>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
