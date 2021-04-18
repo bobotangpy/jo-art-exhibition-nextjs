@@ -15,7 +15,7 @@ export default function Family({ name }) {
 
 export const getStaticPaths = async () => {
   const getData = await fetch(
-    "http://localhost:3000/assets/_data/storyboardData.json"
+    "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/storyboardData.json"
   );
   const res = await getData.json();
 
@@ -30,7 +30,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const getData = await fetch(
-    "http://localhost:3000/assets/_data/storyboardData.json"
+    "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/storyboardData.json"
   );
   const res = await getData.json();
   let chans, lees, wongs;
