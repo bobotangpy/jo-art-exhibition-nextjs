@@ -1,6 +1,9 @@
 {
   "chans": [
     {
+      "narrative": "“My dad is one of the most well-read people I have ever known and he loves sharing small segments of world history every time I get to have meals with him. He was born in Macau and to my understanding, education in Macau has always put more emphasis on Chinese literature, culture, and history compared to Hong Kong. Even though I don’t think I had ever listened to a single story in one go, my dad used to read me Chinese idiom stories as bedtime stories when I was young; just as I had studied in Christian schools for some 14 years, I am not a Christian - these are all interesting stories to me, nothing more, nothing less. My mom has only become interested in following current affairs since the 2019 protests. She goes online to read this and listen to that and actually, enjoys talking about it. My sister has had a very clear stance from the beginning and I remember hearing and witnessing all those clashes between her and my parents. There were fewer occasions that we would all hangout as a family. While my sister has loved spending time in her room, it seems to me that she has been spending even more time in the room since then, especially when my parents are watching news and stuff, whichever might promote a discussion around current events. My mom and sister would approach me separately to show frustration and I would discuss and analyze the issues with them. Afterall, it’s been over a year and we all know we have distinct and nuanced ideas and there are certain aspects or topics that we would just avoid discussing in a certain context. I am extremely grateful that even though there have been obvious disagreements between family members, we have learnt how to deal with it, and still be a supportive and loving family. Compared to other stories that I’ve encountered, we are a very mild, very fortunate case.” "
+    },
+    {
       "person": "daughter 1",
       "questions": [
         {
@@ -191,6 +194,9 @@
   ],
   "lees": [
     {
+      "narrative": "“My dad is one of the most well-read people I have ever known and he loves sharing small segments of world history every time I get to have meals with him. He was born in Macau and to my understanding, education in Macau has always put more emphasis on Chinese literature, culture, and history compared to Hong Kong. Even though I don’t think I had ever listened to a single story in one go, my dad used to read me Chinese idiom stories as bedtime stories when I was young; just as I had studied in Christian schools for some 14 years, I am not a Christian - these are all interesting stories to me, nothing more, nothing less. My mom has only become interested in following current affairs since the 2019 protests. She goes online to read this and listen to that and actually, enjoys talking about it. My sister has had a very clear stance from the beginning and I remember hearing and witnessing all those clashes between her and my parents. There were fewer occasions that we would all hangout as a family. While my sister has loved spending time in her room, it seems to me that she has been spending even more time in the room since then, especially when my parents are watching news and stuff, whichever might promote a discussion around current events. My mom and sister would approach me separately to show frustration and I would discuss and analyze the issues with them. Afterall, it’s been over a year and we all know we have distinct and nuanced ideas and there are certain aspects or topics that we would just avoid discussing in a certain context. I am extremely grateful that even though there have been obvious disagreements between family members, we have learnt how to deal with it, and still be a supportive and loving family. Compared to other stories that I’ve encountered, we are a very mild, very fortunate case.” "
+    },
+    {
       "person": "daughter",
       "questions": [
         {
@@ -286,6 +292,7 @@
     }
   ],
   "wongs": [
+    {"narrative": "“We get along very well, my parents and I share the same political stance. My dad has to make daily travels to the mainland for work whereas my mom and I work in the compliance industry. Given the nature of our work, the social events over the past few years have had a significant impact on both our personal and professional lives and induced a great deal of stress. While my grandparents are prone to believe in what the government says, most likely because of their background as refugees, the three of us don’t share the same stance with them. Despite sharing the same stance, we consult very different media and sources: my dad would watch some highly critical videos from youtubers whereas my mom and I would interact with a diverse pool of information, including some pro-government newspapers. It’s great that even though we absorb information from two ‘extremes’, you may say, we can still calmly share different perspectives and discuss them and share the same views on major issues and principles. For sure there are disagreements, but those are on minor things or events so that would not affect our relationships. All in all, this particular movement, compared to the previous ones, is more striking and stressful as it really impacts our personal safety and more.”"},
     {
       "person": "daughter",
       "questions": [

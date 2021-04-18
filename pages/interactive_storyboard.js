@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import StoryboardModal from "../components/StoryboardModal";
 import Footer from "../components/Footer";
 import Avatar from "@material-ui/core/Avatar";
@@ -24,6 +25,7 @@ const constentStyle = {
   paddingTop: "10px",
   paddingBottom: "10px",
   color: "#2d3757",
+  cursor: "pointer",
 };
 
 const btnStyle = {
@@ -40,9 +42,9 @@ const Cards = ({ data, name }) => {
   //   if (itemData) console.log(itemData);
   // }, [itemData]);
 
-  const handleOpenModal = () => {
-    setOpenModal(!openModal);
-  };
+  // const handleOpenModal = () => {
+  //   setOpenModal(!openModal);
+  // };
 
   const AvatarIcon = ({ name }) => {
     return name[0] === "C" ? (
@@ -76,11 +78,17 @@ const Cards = ({ data, name }) => {
     <>
       <Card style={{ minWidth: "250px", maxWidth: "250px" }}>
         <AvatarIcon name={name} />
-        <CardContent className="name" style={constentStyle}>
-          <h3>The {name}'s</h3>
-        </CardContent>
+        {/* <Link href={`/interactive_stroyboard/${name.toLowerCase()}s`}> */}
+        <Link
+          href={{ pathname: "/familyNarrative", query: { family: `${name}` } }}
+          as={`/familyNarrative/${name.toLowerCase()}s`}
+        >
+          <CardContent className="name" style={constentStyle}>
+            <h3>The {name}'s</h3>
+          </CardContent>
+        </Link>
 
-        <CardActions style={{ justifyContent: "center", flexWrap: "wrap" }}>
+        {/* <CardActions style={{ justifyContent: "center", flexWrap: "wrap" }}>
           {data.map((item, index) => (
             <Button
               size="small"
@@ -94,10 +102,10 @@ const Cards = ({ data, name }) => {
               {item.person}
             </Button>
           ))}
-        </CardActions>
+        </CardActions> */}
       </Card>
 
-      {itemData ? (
+      {/* {itemData ? (
         <StoryboardModal
           openModal={openModal}
           handleOpenModal={handleOpenModal}
@@ -105,49 +113,49 @@ const Cards = ({ data, name }) => {
         />
       ) : (
         <></>
-      )}
+      )} */}
     </>
   );
 };
 
-export default function Background() {
-  const [data, setData] = useState(null);
-  const [chansData, setChansData] = useState(null);
-  const [leesData, setLeesData] = useState(null);
-  const [wongsData, setWongsData] = useState(null);
+export default function InterActiveStoryboard({ res, chans, lees, wongs }) {
+  // const [data, setData] = useState(null);
+  const [chansData, setChansData] = useState(chans);
+  const [leesData, setLeesData] = useState(lees);
+  const [wongsData, setWongsData] = useState(wongs);
 
   useEffect(() => {
-    getData();
+    // getData();
   }, []);
 
-  useEffect(() => {
-    if (data) {
-      // console.log(data);
+  // useEffect(() => {
+  //   if (data) {
+  //     // console.log(data);
 
-      for (let [key, val] of Object.entries(data)) {
-        switch (key) {
-          case "chans":
-            setChansData(val);
-            break;
-          case "lees":
-            setLeesData(val);
-            break;
-          case "wongs":
-            setWongsData(val);
-            break;
-          default:
-            break;
-        }
-      }
-    }
-  }, [data]);
+  //     for (let [key, val] of Object.entries(data)) {
+  //       switch (key) {
+  //         case "chans":
+  //           setChansData(val);
+  //           break;
+  //         case "lees":
+  //           setLeesData(val);
+  //           break;
+  //         case "wongs":
+  //           setWongsData(val);
+  //           break;
+  //         default:
+  //           break;
+  //       }
+  //     }
+  //   }
+  // }, [data]);
 
-  const getData = async () => {
-    const getData = await fetch("/assets/_data/storyboardData.json");
-    const res = await getData.json();
+  // const getData = async () => {
+  //   const getData = await fetch("/assets/_data/storyboardData.json");
+  //   const res = await getData.json();
 
-    if (res) setData(res);
-  };
+  //   if (res) setData(res);
+  // };
 
   return (
     <>
@@ -186,3 +194,36 @@ export default function Background() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const getData = await fetch(
+    "http://localhost:3000/assets/_data/storyboardData.json"
+  );
+  const res = await getData.json();
+  let chans, lees, wongs;
+
+  for (let [key, val] of Object.entries(res)) {
+    switch (key) {
+      case "chans":
+        chans = val;
+        break;
+      case "lees":
+        lees = val;
+        break;
+      case "wongs":
+        wongs = val;
+        break;
+      default:
+        break;
+    }
+  }
+
+  return {
+    props: {
+      res,
+      chans,
+      lees,
+      wongs,
+    },
+  };
+};

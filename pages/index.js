@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -22,9 +23,22 @@ const sliderSetting = {
 };
 
 export default function Home() {
+  useEffect(() => {
+    if (document.querySelectorAll(".slick-slide img")) {
+      console.log(document.querySelectorAll(".slick-slide img"));
+    }
+  }, []);
+
   return (
     <>
-      <div style={{ margin: "0px auto", width: "auto", height: "800px" }}>
+      <div
+        style={{
+          margin: "0px auto",
+          width: "auto",
+          height: "800px",
+          overflow: "hidden",
+        }}
+      >
         <div className={styles.landing}>
           <header className={styles.title}>
             Visualizing the Civic Identity Struggle in Hong Kong: <br />
@@ -35,66 +49,72 @@ export default function Home() {
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  className={styles.image}
+                  // className={styles.image}
                   src="/assets/homepage/1.jpeg"
                   alt="1"
                   width="100%"
                   height="800px"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  className={styles.image}
+                  // className={styles.image}
                   src="/assets/homepage/2.jpg"
                   alt="2"
                   width="100%"
                   height="800px"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  className={styles.image}
+                  // className={styles.image}
                   src="/assets/homepage/3.jpg"
                   alt="3"
                   width="100%"
                   height="800px"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  className={styles.image}
+                  // className={styles.image}
                   src="/assets/homepage/4.jpg"
                   alt="4"
                   width="100%"
                   height="800px"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  className={styles.image}
+                  // className={styles.image}
                   src="/assets/homepage/5.jpg"
                   alt="5"
                   width="100%"
                   height="800px"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  className={styles.image}
+                  // className={styles.image}
                   src="/assets/homepage/6.jpg"
                   alt="6"
                   width="100%"
                   height="800px"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>

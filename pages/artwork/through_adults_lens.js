@@ -84,6 +84,8 @@ export default function AdultsLens() {
                       ></iframe>
                     )}
                     <br />
+                    <label>{`${work.author}, `}</label>
+                    <br />
                     <label>{`${work.title}, `}</label>
                     <br />
                     <label>{`${work.medium}`}</label>

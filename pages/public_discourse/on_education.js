@@ -52,7 +52,7 @@ export default function OnEducation({data}) {
 }
 
 export async function getStaticProps() {
-  const url = "https://raw.githubusercontent.com/bobotangpy/wbb-fanpage/master/jo/_data/videoData.json";
+  const url = "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/videoData.json";
   const getData = await fetch(url);
   const res = await getData.json();
   let data;

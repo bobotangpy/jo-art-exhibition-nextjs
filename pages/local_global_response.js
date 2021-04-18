@@ -1,6 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Footer from "../components/Footer";
 import styles from "../styles/LocalGlobalResponse.module.scss";
+
+const TableData = ({ data }) => {
+  // console.log(data);
+  let arr = Object.values(data);
+  let group = [];
+
+  for (let i = 0, end = arr.length / 2; i < end; ++i) {
+    group.push(arr.slice(i * 2, (i + 1) * 2));
+  }
+  return (
+    group &&
+    group.map((item, index) => (
+      <tr key={index}>
+        {item.map((image, index) => (
+          <td key={index}>
+            <a href={`${image.link}`} target="_blank">
+              <img
+                src={`/assets/localGlobal/${image.category}/${image.name}.jpg`}
+                alt={`${image.alt}`}
+                title={`${image.alt}`}
+                width={120}
+                className={styles.image}
+              />
+            </a>
+          </td>
+        ))}
+      </tr>
+    ))
+  );
+};
 
 export default function LocalGlobalResponse({
   data,
@@ -24,16 +54,16 @@ export default function LocalGlobalResponse({
       setMigration(migrationData);
       setEducation(educationData);
     }
+    
+    // window.addEventListener("mousemove", () => {
+
+    // })
   }, []);
 
   useEffect(() => {
     if (identity && art && migration && education)
       setImages((images) => images.concat(identity, art, migration, education));
   }, [identity]);
-
-  useEffect(() => {
-    if (images) console.log(images);
-  }, [images]);
 
   // const getData = async () => {
   //   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/localGlobalImages.json";
@@ -52,35 +82,6 @@ export default function LocalGlobalResponse({
   //       : "";
   //   }
   // }
-
-  const TableData = ({ data }) => {
-    // console.log(data);
-    let arr = Object.values(data);
-    let group = [];
-
-    for (let i = 0, end = arr.length / 2; i < end; ++i) {
-      group.push(arr.slice(i * 2, (i + 1) * 2));
-    }
-    return (
-      group &&
-      group.map((item, index) => (
-        <tr key={index}>
-          {item.map((image, index) => (
-            <td key={index}>
-              <a href={`${image.link}`} target="_blank">
-                <img
-                  src={`/assets/localGlobal/${image.category}/${image.name}.jpg`}
-                  alt={`${image.alt}`}
-                  title={`${image.alt}`}
-                  width={140}
-                />
-              </a>
-            </td>
-          ))}
-        </tr>
-      ))
-    );
-  };
 
   return (
     <>
@@ -108,7 +109,7 @@ export default function LocalGlobalResponse({
         onMouseLeave={() => setHideDiv(false)}
       >
         <div className={hideDiv ? styles.hideDiv : styles.overlay}>
-          &nbsp;&nbsp;i&nbsp;&nbsp;a&nbsp;m&nbsp;...
+          &nbsp;&nbsp;i&nbsp;&nbsp;a&nbsp;m...
         </div>
         <div className={styles.images}>
           {images.map((item, index) => (
@@ -130,7 +131,8 @@ export default function LocalGlobalResponse({
 }
 
 export async function getStaticProps() {
-  const url = "https://raw.githubusercontent.com/bobotangpy/wbb-fanpage/master/jo/_data/localGlobalImages.json";
+  const url =
+    "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/localGlobalImages.json";
   const getData = await fetch(url);
   const data = await getData.json();
   let identityData, artData, migrationData, educationData;

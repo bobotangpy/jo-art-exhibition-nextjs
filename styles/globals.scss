@@ -31,6 +31,7 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: #0000008A;
 }
 
 button,
@@ -165,29 +166,23 @@ p {
 .MuiAccordion-root:before {
   display: none;
 }
-
 .navMenu .MuiPaper-root {
   background-color: inherit !important;
 }
-
 .navMenu .MuiPaper-elevation1 {
   box-shadow: none !important;
 }
-
 .MuiAccordionSummary-root {
   min-height: 45px !important;
   padding: 0px 16px 0 40px !important;
 }
-
 .MuiAccordionSummary-content {
   margin: 0 !important;
   justify-content: center;
 }
-
 .MuiAccordion-root.Mui-expanded {
   margin: 5px 0 !important;
 }
-
 .MuiAccordionSummary-root.Mui-expanded {
   min-height: 35px !important;
 }

@@ -37,10 +37,6 @@ export default function Navbar() {
     setOpenMenu(!openMenu);
   };
 
-  useEffect(() => {
-    console.log(openMenu);
-  }, [openMenu]);
-
   return (
     <>
       <Head>

@@ -1,6 +1,7 @@
 {
   "1_winnie": [
     {
+      "author": "Winnie",
       "title": "1st July",
       "year": "2007",
       "medium": "oil on canvas in wooden window",
@@ -8,6 +9,7 @@
       "src": "/assets/adultsLens/1_winnie/1.jpg"
     },
     {
+      "author": "Winnie",
       "title": "One Country Two Systems",
       "year": "2008",
       "medium": "oil on canvas",
@@ -15,6 +17,7 @@
       "src": "/assets/adultsLens/1_winnie/2.jpg"
     },
     {
+      "author": "Winnie",
       "title": "Hong Kong Property Market",
       "year": "2013",
       "medium": "oil on canvas",
@@ -24,6 +27,7 @@
   ],
   "2_sinde": [
     {
+      "author": "Sinde",
       "title": "A Dreamer",
       "year": "2019",
       "medium": "oil on panel",
@@ -31,6 +35,7 @@
       "src": "/assets/adultsLens/2_sinde/1.jpg"
     },
     {
+      "author": "Sinde",
       "title": "Unsuspicious",
       "year": "2019",
       "medium": "oil on panel",
@@ -38,6 +43,7 @@
       "src": "/assets/adultsLens/2_sinde/2.jpg"
     },
     {
+      "author": "Sinde",
       "title": "Freedom",
       "year": "2020",
       "medium": "oil on panel",
@@ -47,6 +53,7 @@
   ],
   "3_bianca": [
     {
+      "author": "Bianca",
       "title": "The land of floating islands",
       "year": "2020",
       "medium": "watercolor on paper",
@@ -54,6 +61,7 @@
       "src": "/assets/adultsLens/3_bianca/1.jpeg"
     },
     {
+      "author": "Bianca",
       "title": "The tale of imagined truths",
       "year": "2020",
       "medium": "watercolor on paper",
@@ -61,6 +69,7 @@
       "src": "/assets/adultsLens/3_bianca/2.jpeg"
     },
     {
+      "author": "Bianca",
       "title": "And so we sink",
       "year": "2020",
       "medium": "watercolor on paper",
@@ -70,6 +79,7 @@
   ],
   "4_austin": [
     {
+      "author": "Austin",
       "title": "Philosophy One, Microsecond",
       "year": null,
       "medium": "video",
