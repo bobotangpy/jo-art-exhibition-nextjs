@@ -1,23 +1,22 @@
 // import { useEffect } from "react";
-import { setRef } from "@material-ui/core";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 
-export default function Reference() {
-  const [ref, setRef] = useState(null);
+export default function Reference({data}) {
+  // const [ref, setRef] = useState(null);
 
-  useEffect(() => {
+  // useEffect(() => {
     // console.log(data);
-    getData()
-  }, []);
+    // getData()
+  // }, []);
 
-  const getData = async () => {
-    const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
-    const getData = await fetch(url);
-    const data = await getData.text();
+  // const getData = async () => {
+  //   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
+  //   const getData = await fetch(url);
+  //   const data = await getData.text();
 
-    if (data) setRef(data);
-  }
+  //   if (data) setRef(data);
+  // }
 
   return (
     <>
@@ -25,7 +24,7 @@ export default function Reference() {
         <header className="pageTitle">Reference</header>
 
         <div className="textContent">
-          {ref && ref.split("##").map((line) => (
+          {data && data.split("##").map((line) => (
             <p key={line}>{line}</p>
           ))}
         </div>
@@ -35,14 +34,14 @@ export default function Reference() {
   );
 }
 
-// export async function getStaticProps() {
-//   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
-//   const getData = await fetch(url);
-//   const data = await getData.text();
+export async function getStaticProps() {
+  const url = "https://raw.githubusercontent.com/bobotangpy/wbb-fanpage/master/jo/_data/Reference.txt";
+  const getData = await fetch(url);
+  const data = await getData.text();
 
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
+  return {
+    props: {
+      data,
+    },
+  };
+}

@@ -17,41 +17,41 @@ export default function LocalGlobalResponse({
   const [hideDiv, setHideDiv] = useState(false);
 
   useEffect(() => {
-    getData()
-    // if (data) {
-    //   setiDentity(identityData);
-    //   setArt(artData);
-    //   setMigration(migrationData);
-    //   setEducation(educationData);
-    // }
+    // getData()
+    if (data) {
+      setiDentity(identityData);
+      setArt(artData);
+      setMigration(migrationData);
+      setEducation(educationData);
+    }
   }, []);
 
   useEffect(() => {
     if (identity && art && migration && education)
       setImages((images) => images.concat(identity, art, migration, education));
-  }, [education]);
+  }, [identity]);
 
   useEffect(() => {
     if (images) console.log(images);
   }, [images]);
 
-  const getData = async () => {
-    const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/localGlobalImages.json";
-    const getData = await fetch(url);
-    const data = await getData.json();
+  // const getData = async () => {
+  //   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/localGlobalImages.json";
+  //   const getData = await fetch(url);
+  //   const data = await getData.json();
 
-    for (let [key, val] of Object.entries(data)) {
-      key === "identity"
-        ? setIdentityData(val)
-        : key === "art"
-        ? setArtData(val)
-        : key === "migration"
-        ? setMigrationData(val)
-        : key === "education"
-        ? setEducationData(val)
-        : "";
-    }
-  }
+  //   for (let [key, val] of Object.entries(data)) {
+  //     key === "identity"
+  //       ? setIdentityData(val)
+  //       : key === "art"
+  //       ? setArtData(val)
+  //       : key === "migration"
+  //       ? setMigrationData(val)
+  //       : key === "education"
+  //       ? setEducationData(val)
+  //       : "";
+  //   }
+  // }
 
   const TableData = ({ data }) => {
     // console.log(data);
@@ -129,31 +129,31 @@ export default function LocalGlobalResponse({
   );
 }
 
-// export async function getStaticProps() {
-//   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/localGlobalImages.json";
-//   const getData = await fetch(url);
-//   const data = await getData.json();
-//   let identityData, artData, migrationData, educationData;
+export async function getStaticProps() {
+  const url = "https://raw.githubusercontent.com/bobotangpy/wbb-fanpage/master/jo/_data/localGlobalImages.json";
+  const getData = await fetch(url);
+  const data = await getData.json();
+  let identityData, artData, migrationData, educationData;
 
-//   for (let [key, val] of Object.entries(data)) {
-//     key === "identity"
-//       ? (identityData = val)
-//       : key === "art"
-//       ? (artData = val)
-//       : key === "migration"
-//       ? (migrationData = val)
-//       : key === "education"
-//       ? (educationData = val)
-//       : "";
-//   }
+  for (let [key, val] of Object.entries(data)) {
+    key === "identity"
+      ? (identityData = val)
+      : key === "art"
+      ? (artData = val)
+      : key === "migration"
+      ? (migrationData = val)
+      : key === "education"
+      ? (educationData = val)
+      : "";
+  }
 
-//   return {
-//     props: {
-//       data,
-//       identityData,
-//       artData,
-//       migrationData,
-//       educationData,
-//     },
-//   };
-// }
+  return {
+    props: {
+      data,
+      identityData,
+      artData,
+      migrationData,
+      educationData,
+    },
+  };
+}

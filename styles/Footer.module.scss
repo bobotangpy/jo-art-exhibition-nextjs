@@ -1,4 +1,5 @@
-$heading: "Prata", "san-serif";
+$heading: 'Marko One', serif;
+// $heading: "Prata", "san-serif";
 $body: "Muli", "san-serif";
 
 $dark-blue: #2d3757;
@@ -18,7 +19,7 @@ $text-color: #13130d;
 
 .footer {
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   width: 100%;
   // background: $dark-blue;
   // color: #ffffff;
@@ -32,10 +33,11 @@ $text-color: #13130d;
     .column {
       display: flex;
       flex-direction: column;
-      padding: 15px 10px;
+      padding: 5px 10px;
 
       h3 {
-        font-family: "Prata";
+        font-family: $heading;
+        // font-family: "Prata";
         color: $text-color;
         margin-bottom: 20px;
       }

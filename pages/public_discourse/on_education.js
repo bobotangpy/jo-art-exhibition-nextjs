@@ -4,28 +4,28 @@ import VideoLayout from "../../components/VideoLayout";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 
-export default function OnEducation() {
+export default function OnEducation({data}) {
   const [pageData, setPageData] = useState("");
 
   useEffect(() => {
-    getData();
-    // if (data) setPageData(data);
+    // getData();
+    if (data) setPageData(data);
   }, []);
 
-  const getData = async () => {
-    const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
-    const getData = await fetch(url);
-    const res = await getData.json();
-    let data;
+  // const getData = async () => {
+  //   const url = "https://raw.githubusercontent.com/bobotangpy/wbb-fanpage/master/jo/_data/videoData.json";
+  //   const getData = await fetch(url);
+  //   const res = await getData.json();
+  //   let data;
 
-    if (res) {
-      for (const [key, val] of Object.entries(res)) {
-        if (key === "edu") {
-          setPageData(val);
-        }
-      }
-    }
-  }
+  //   if (res) {
+  //     for (const [key, val] of Object.entries(res)) {
+  //       if (key === "edu") {
+  //         setPageData(val);
+  //       }
+  //     }
+  //   }
+  // }
 
   return (
     <>
@@ -51,23 +51,23 @@ export default function OnEducation() {
   );
 }
 
-// export async function getStaticProps() {
-//   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/videoData.json";
-//   const getData = await fetch(url);
-//   const res = await getData.json();
-//   let data;
+export async function getStaticProps() {
+  const url = "https://raw.githubusercontent.com/bobotangpy/wbb-fanpage/master/jo/_data/videoData.json";
+  const getData = await fetch(url);
+  const res = await getData.json();
+  let data;
 
-//   if (res) {
-//     for (const [key, val] of Object.entries(res)) {
-//       if (key === "edu") {
-//         data = val;
-//       }
-//     }
-//   }
+  if (res) {
+    for (const [key, val] of Object.entries(res)) {
+      if (key === "edu") {
+        data = val;
+      }
+    }
+  }
 
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
+  return {
+    props: {
+      data,
+    },
+  };
+}

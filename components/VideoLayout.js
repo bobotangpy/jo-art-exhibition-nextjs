@@ -9,7 +9,7 @@ const cardStyle = {
   padding: "15px 30px",
   borderRadius: "0",
   border: "#797979 1px solid",
-  fontFamily: "Prata",
+  fontFamily: "Marko One",
   fontWeight: "normal",
 };
 

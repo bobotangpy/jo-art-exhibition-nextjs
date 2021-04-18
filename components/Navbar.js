@@ -37,6 +37,10 @@ export default function Navbar() {
     setOpenMenu(!openMenu);
   };
 
+  useEffect(() => {
+    console.log(openMenu);
+  }, [openMenu]);
+
   return (
     <>
       <Head>
@@ -85,13 +89,14 @@ export default function Navbar() {
                 </a>
               </Link>
 
-              <Link href="/background" onClick={handleOpenMenu}>
+              <Link href="/background">
                 <a
                   className={
                     router.pathname == "/background"
                       ? styles.activeLink
                       : styles.link
                   }
+                  onClick={handleOpenMenu}
                 >
                   Background
                 </a>
@@ -107,44 +112,41 @@ export default function Navbar() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Link href="/public_discourse" onClick={handleOpenMenu}>
+                  <Link href="/public_discourse">
                     <a
                       className={
                         router.pathname == "/public_discourse"
                           ? styles.activeLink
                           : styles.link
                       }
+                      onClick={handleOpenMenu}
                     >
                       Public Discourse
                     </a>
                   </Link>
                 </AccordionSummary>
                 <AccordionDetails style={accordionStyle}>
-                  <Link
-                    href="/public_discourse/on_education"
-                    onClick={handleOpenMenu}
-                  >
+                  <Link href="/public_discourse/on_education">
                     <a
                       className={
                         router.pathname == "/public_discourse/on_education"
                           ? styles.activeLink
                           : styles.link
                       }
+                      onClick={handleOpenMenu}
                     >
                       On Education
                     </a>
                   </Link>
 
-                  <Link
-                    href="/public_discourse/on_hkandchina"
-                    onClick={handleOpenMenu}
-                  >
+                  <Link href="/public_discourse/on_hkandchina">
                     <a
                       className={
                         router.pathname == "/public_discourse/on_hkandchina"
                           ? styles.activeLink
                           : styles.link
                       }
+                      onClick={handleOpenMenu}
                     >
                       On Hong Kong and China
                     </a>
@@ -162,44 +164,41 @@ export default function Navbar() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Link href="/artwork" onClick={handleOpenMenu}>
+                  <Link href="/artwork">
                     <a
                       className={
                         router.pathname == "/artwork"
                           ? styles.activeLink
                           : styles.link
                       }
+                      onClick={handleOpenMenu}
                     >
                       Artworks
                     </a>
                   </Link>
                 </AccordionSummary>
                 <AccordionDetails style={accordionStyle}>
-                  <Link
-                    href="/artwork/through_adults_lens"
-                    onClick={handleOpenMenu}
-                  >
+                  <Link href="/artwork/through_adults_lens">
                     <a
                       className={
                         router.pathname == "/artwork/through_adults_lens"
                           ? styles.activeLink
                           : styles.link
                       }
+                      onClick={handleOpenMenu}
                     >
                       Through Adult's Lens
                     </a>
                   </Link>
 
-                  <Link
-                    href="/artwork/through_childrens_lens"
-                    onClick={handleOpenMenu}
-                  >
+                  <Link href="/artwork/through_childrens_lens">
                     <a
                       className={
                         router.pathname == "/artwork/through_childrens_lens"
                           ? styles.activeLink
                           : styles.link
                       }
+                      onClick={handleOpenMenu}
                     >
                       Through Children's Lens
                     </a>
@@ -207,49 +206,53 @@ export default function Navbar() {
                 </AccordionDetails>
               </Accordion>
 
-              <Link href="/local_global_response" onClick={handleOpenMenu}>
+              <Link href="/local_global_response">
                 <a
                   className={
                     router.pathname == "/local_global_response"
                       ? styles.activeLink
                       : styles.link
                   }
+                  onClick={handleOpenMenu}
                 >
                   Local and Global Response
                 </a>
               </Link>
 
-              <Link href="/interactive_storyboard" onClick={handleOpenMenu}>
+              <Link href="/interactive_storyboard">
                 <a
                   className={
                     router.pathname == "/interactive_storyboard"
                       ? styles.activeLink
                       : styles.link
                   }
+                  onClick={handleOpenMenu}
                 >
                   Interactive Storyboard
                 </a>
               </Link>
 
-              <Link href="/comment" onClick={handleOpenMenu}>
+              <Link href="/comment">
                 <a
                   className={
                     router.pathname == "/comment"
                       ? styles.activeLink
                       : styles.link
                   }
+                  onClick={handleOpenMenu}
                 >
                   Comment
                 </a>
               </Link>
 
-              <Link href="/reference" onClick={handleOpenMenu}>
+              <Link href="/reference">
                 <a
                   className={
                     router.pathname == "/reference"
                       ? styles.activeLink
                       : styles.link
                   }
+                  onClick={handleOpenMenu}
                 >
                   Reference
                 </a>

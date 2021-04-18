@@ -13,7 +13,7 @@ const avatarStyle = {
   padding: "45px 20px",
   fontSize: "90px",
   fontWeight: "bold",
-  fontFamily: "Prata",
+  fontFamily: "Marko One",
   color: "#fafafa",
 };
 
