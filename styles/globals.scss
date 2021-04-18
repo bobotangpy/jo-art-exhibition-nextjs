@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Marko+One");
 @import url("https://fonts.googleapis.com/css?family=Muli");
 
-$heading: 'Marko One', serif;
+$heading: "Marko One", serif;
 // $heading: "Prata", "san-serif";
 $body: "Muli", "san-serif";
 
@@ -15,7 +15,7 @@ $darker-red: #e07e71;
 $mild-red: #eca499;
 $bg-red: #d26a5f;
 $text-red: #fff1f0;
-$light-yellow: #fffcde;
+$light-yellow: #fffdeb;
 $grey: #f0f3fb;
 
 $bg-color: #fafafa;
@@ -31,7 +31,7 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: #0000008A;
+  color: #0000008a;
 }
 
 button,
@@ -46,9 +46,9 @@ textarea {
 button {
   transition: all 0.3s ease-in-out;
   :hover {
-    background-color: $dark-blue;
-    color: $bg-color;
-    border-color: $dark-blue;
+    background-color: $mild-blue;
+    color: $light-yellow;
+    border-color: $mild-blue;
   }
 }
 
@@ -84,7 +84,7 @@ p {
   flex-direction: column;
   // background-color: $bg-blue;
   // color: $text-blue;
-  background-color: $bg-color;
+  background-color: $light-yellow;
   color: $text-color;
   // margin-bottom: 500px;
   position: relative;
@@ -98,8 +98,13 @@ p {
   .textContent {
     font-family: $body;
     padding: 25px 0;
-    font-size: large;
+    font-size: medium;
     line-height: 1.5em;
+
+    p {
+      margin-bottom: 30px;
+      text-align: justify;
+    }
   }
 }
 
@@ -123,7 +128,7 @@ p {
   padding: 0 100px;
   line-height: 1.4em;
 }
-.SRLThumbnailsContainer{
+.SRLThumbnailsContainer {
   display: none !important;
 }
 
@@ -222,9 +227,7 @@ p {
   .option {
     margin: 15px;
     padding: 20px 40px;
-    // border-radius: 4px;
     border: none;
-    // font-weight: bold;
     font-size: 18px;
     cursor: pointer;
 
@@ -236,13 +239,110 @@ p {
     transition: all 0.3s ease-in-out;
     &:hover {
       background-color: $dark-blue;
-      color: $bg-color;
+      color: $light-yellow;
       border-color: $dark-blue;
     }
   }
 }
 
-// Storyboard Card Btns
-.MuiButtonBase-root.MuiButton-root:hover {
-  background-color: transparent;
+// Interactive Storyboard
+// Card Btns
+// .MuiButtonBase-root.MuiButton-root:hover {
+//   background-color: transparent;
+// }
+.Chan {
+  color: #88cbdb;
+  button {
+    background-color: $light-yellow !important;
+    color: #88cbdb !important;
+    border-color: #88cbdb !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    transition: all 0.3s ease-in-out !important;
+    &:hover {
+      background-color: #88cbdb !important;
+      color: $light-yellow !important;
+      border-color: #88cbdb !important;
+    }
+  }
+}
+
+.Lee {
+  color: #eca499;
+  button {
+    background-color: $light-yellow !important;
+    color: #eca499 !important;
+    border-color: #eca499 !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    transition: all 0.3s ease-in-out !important;
+    &:hover {
+      background-color: #eca499 !important;
+      color: $light-yellow !important;
+      border-color: #eca499 !important;
+    }
+  }
+}
+
+.Wong {
+  color: #33699f;
+  button {
+    background-color: $light-yellow !important;
+    color: #33699f !important;
+    border-color: #33699f !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    transition: all 0.3s ease-in-out !important;
+    &:hover {
+      background-color: #33699f !important;
+      color: $light-yellow !important;
+      border-color: #33699f !important;
+    }
+  }
+}
+
+/* Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  .pageContent {
+    padding: 25px;
+    
+    .pageTitle {
+      font-size: 27px;
+      margin: 20px 0 10px 0;
+    }
+  }
+
+  .flexRow, .btnsDiv {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    word-break: break-word;
+  }
+
+  // Breadcrumbs 
+  .MuiBreadcrumbs-ol {
+    font-size: 13px;
+  }
+
+  // Home Page //
+  .navWrapper {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  // VideoLayout Page //
+  .MuiCardContent-root {
+    flex-direction: column !important;
+  }
+  .videoCard h3 {
+    padding-left: 0 !important;
+  }
+
+  // Interactive Storyboard //
+  .MuiCard-root {
+    margin-bottom: 30px;
+  }
 }

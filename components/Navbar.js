@@ -71,15 +71,16 @@ export default function Navbar() {
         }}
       >
         <Fade in={openMenu}>
-          <div style={openMenu ? openMenuStyle : { display: "none" }}>
+          <div className="navWrapper" style={openMenu ? openMenuStyle : { display: "none" }}>
             <div className={`${styles.menu} navMenu`}>
               <CloseIcon className={styles.back} onClick={handleOpenMenu} />
 
-              <Link href="/" exact onClick={handleOpenMenu}>
+              <Link href="/" exact >
                 <a
                   className={
                     router.pathname == "/" ? styles.activeLink : styles.link
                   }
+                  onClick={handleOpenMenu}
                 >
                   Home
                 </a>
@@ -160,10 +161,10 @@ export default function Navbar() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Link href="/artwork">
+                  <Link href="/artworks">
                     <a
                       className={
-                        router.pathname == "/artwork"
+                        router.pathname == "/artworks"
                           ? styles.activeLink
                           : styles.link
                       }
@@ -174,10 +175,10 @@ export default function Navbar() {
                   </Link>
                 </AccordionSummary>
                 <AccordionDetails style={accordionStyle}>
-                  <Link href="/artwork/through_adults_lens">
+                  <Link href="/artworks/through_adults_lens">
                     <a
                       className={
-                        router.pathname == "/artwork/through_adults_lens"
+                        router.pathname == "/artworks/through_adults_lens"
                           ? styles.activeLink
                           : styles.link
                       }
@@ -187,10 +188,10 @@ export default function Navbar() {
                     </a>
                   </Link>
 
-                  <Link href="/artwork/through_childrens_lens">
+                  <Link href="/artworks/through_childrens_lens">
                     <a
                       className={
-                        router.pathname == "/artwork/through_childrens_lens"
+                        router.pathname == "/artworks/through_childrens_lens"
                           ? styles.activeLink
                           : styles.link
                       }

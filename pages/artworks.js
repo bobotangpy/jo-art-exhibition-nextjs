@@ -1,12 +1,12 @@
 import * as React from "react";
 import Footer from "../components/Footer";
-// import styles from "../style/artwork.module.scss";
+import styles from "../styles/PublicDiscourse.module.scss";
 
-export default function Artwork() {
+export default function Artworks() {
   return (
     <>
       <div className="pageContent fadeIn">
-        <header className="pageTitle">Artwork</header>
+        <header className="pageTitle">Artworks</header>
 
         <div className="textContent">
           <p>
@@ -33,13 +33,16 @@ export default function Artwork() {
             be manifested “Through Children’s Lens”.
           </p>
 
-          <div className="btnsDiv">
-            <a href="/artwork/through_adults_lens">
-              <button className="option">Through Adult's Lens</button>
+          {/* <div className="btnsDiv"> */}
+          <div className={styles.discourseBtns}>
+            <a href="/artworks/through_adults_lens">
+              {/* <button className="option">Through Adult's Lens</button> */}
+              <button className={styles.edu}>Through Adult's Lens</button>
             </a>
 
-            <a href="/artwork/through_childrens_lens">
-              <button className="option">Through Children's Lens</button>
+            <a href="/artworks/through_childrens_lens">
+              {/* <button className="option">Through Children's Lens</button> */}
+              <button className={styles.hkchina}>Through Children's Lens</button>
             </a>
           </div>
         </div>

@@ -11,7 +11,7 @@ $darker-red: #e07e71;
 $mild-red: #eca499;
 $bg-red: #d26a5f;
 $text-red: #fff1f0;
-$light-yellow: #fffcde;
+$light-yellow: #fffdeb;
 $grey: #f0f3fb;
 
 $bg-color: #fafafa;
@@ -49,5 +49,17 @@ $text-color: #13130d;
         }
       }
     }
+  }
+}
+
+/* Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  .footer {
+    height: 360px;
+  }
+
+  .column {
+    padding: 5px 17px !important;
+    font-size: 14px;
   }
 }

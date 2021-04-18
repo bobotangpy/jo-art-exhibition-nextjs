@@ -1,4 +1,4 @@
-$heading: 'Marko One', serif;
+$heading: "Marko One", serif;
 // $heading: "Prata", "san-serif";
 $body: "Muli", "san-serif";
 
@@ -11,7 +11,7 @@ $darker-red: #e07e71;
 $mild-red: #eca499;
 $bg-red: #d26a5f;
 $text-red: #fff1f0;
-$light-yellow: #fffcde;
+$light-yellow: #fffdeb;
 $grey: #f0f3fb;
 
 $bg-color: #fafafa;
@@ -20,13 +20,12 @@ $text-color: #13130d;
 .container {
   margin: 0px auto;
   width: auto;
-  height: 800px;
+  height: 580px;
 }
 
 .landing {
   position: relative;
   width: 100%;
-  // background: rgba(0, 0, 0, 0.6);
   z-index: 999;
     .slider {
     .carouselCard {
@@ -34,6 +33,7 @@ $text-color: #13130d;
     }
   }
 }
+
 header.title {
   text-align: center;
   vertical-align: middle;
@@ -53,7 +53,16 @@ header.title {
 }
 
 .overlay {
-  height: 800px;
+  height: 600px;
   opacity: 0.75;
-  // background: rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  header.title {
+    line-height: 60px !important;
+    padding: 0 20px !important;
+    width: auto !important;
+    top: 30% !important;
+  }
 }

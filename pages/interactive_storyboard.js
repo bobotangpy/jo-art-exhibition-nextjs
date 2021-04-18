@@ -28,15 +28,15 @@ const constentStyle = {
   cursor: "pointer",
 };
 
-const btnStyle = {
-  color: "#2d3757",
-  fontFamily: "Muli",
-  padding: "3px 5px",
-};
+// const btnStyle = {
+//   color: "#2d3757",
+//   fontFamily: "Muli",
+//   padding: "3px 5px",
+// };
 
 const Cards = ({ data, name }) => {
-  const [openModal, setOpenModal] = useState(false);
-  const [itemData, setItemData] = useState("");
+  // const [openModal, setOpenModal] = useState(false);
+  // const [itemData, setItemData] = useState("");
 
   // useEffect(() => {
   //   if (itemData) console.log(itemData);
@@ -80,7 +80,10 @@ const Cards = ({ data, name }) => {
         <AvatarIcon name={name} />
         {/* <Link href={`/interactive_stroyboard/${name.toLowerCase()}s`}> */}
         <Link
-          href={{ pathname: "/familyNarrative", query: { family: `${name}` } }}
+          href={{
+            pathname: "/familyNarrative",
+            query: { family: `${name}` },
+          }}
           as={`/familyNarrative/${name.toLowerCase()}s`}
         >
           <CardContent className="name" style={constentStyle}>
@@ -118,7 +121,7 @@ const Cards = ({ data, name }) => {
   );
 };
 
-export default function InterActiveStoryboard({ res, chans, lees, wongs }) {
+export default function InterActiveStoryboard({ chans, lees, wongs }) {
   // const [data, setData] = useState(null);
   const [chansData, setChansData] = useState(chans);
   const [leesData, setLeesData] = useState(lees);
@@ -220,7 +223,6 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      res,
       chans,
       lees,
       wongs,

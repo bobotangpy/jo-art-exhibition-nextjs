@@ -5,7 +5,7 @@ import StoryboardModal from "../components/StoryboardModal";
 import Footer from "../components/Footer";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 
-const Content = ({ data }) => {
+const Content = ({ data, family }) => {
   const [openModal, setOpenModal] = useState(false);
   const [itemData, setItemData] = useState(null);
 
@@ -24,7 +24,7 @@ const Content = ({ data }) => {
           <></>
         )
       )} */}
-      <div className="btnsDiv">
+      <div className={`btnsDiv ${family}`}>
         {data.map((item, index) =>
           item.hasOwnProperty("person") ? (
             <button
@@ -60,6 +60,7 @@ const Content = ({ data }) => {
 export default function FamilyNarrative({ chans, lees, wongs }) {
   const router = useRouter();
   const [family, setFamily] = useState(null);
+  const [color, setColor] = useState(null);
 
   useEffect(() => {
     setFamily(router.query.family);
@@ -77,15 +78,15 @@ export default function FamilyNarrative({ chans, lees, wongs }) {
           </Link>
           <p>The {family}'s</p>
         </Breadcrumbs>
-        <header className="pageTitle">The {family}'s</header>
+        <header className={`pageTitle ${family}`}>The {family}'s</header>
 
         <div className="textContent">
           {family === "Chan" ? (
-            <Content data={chans} />
+            <Content data={chans} family={family} />
           ) : family === "Lee" ? (
-            <Content data={lees} />
+            <Content data={lees} family={family} />
           ) : family === "Wong" ? (
-            <Content data={wongs} />
+            <Content data={wongs} family={family} />
           ) : (
             <></>
           )}

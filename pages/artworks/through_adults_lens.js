@@ -51,12 +51,12 @@ export default function AdultsLens() {
           <Link color="inherit" href="/">
             Home
           </Link>
-          <Link color="inherit" href="/artwork">
-            Artwork
+          <Link color="inherit" href="/artworks">
+            Artworks
           </Link>
           <p>Through Adult's Lens</p>
         </Breadcrumbs>
-        <header className="pageTitle">Through Adult's Lens</header>
+        <header className="pageTitle" style={{color: "#e07e71"}}>Through Adult's Lens</header>
 
         <SRLWrapper setting={options}>
           {artworkData &&
@@ -84,11 +84,17 @@ export default function AdultsLens() {
                       ></iframe>
                     )}
                     <br />
-                    <label>{`${work.author}, `}</label>
-                    <br />
-                    <label>{`${work.title}, `}</label>
-                    <br />
-                    <label>{`${work.medium}`}</label>
+                    <div style={{ textAlign: "left" }}>
+                      <label>{`${work.author} `}</label>
+                      <br />
+                      <label>
+                        <i>{`${work.title} `}</i>
+                      </label>
+                      <br />
+                      <label>{`${work.year}`}</label>
+                      <br />
+                      <label>{`${work.medium}`}</label>
+                    </div>
                   </a>
                 ))}
 

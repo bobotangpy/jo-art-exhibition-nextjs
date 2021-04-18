@@ -8,20 +8,17 @@ const cardStyle = {
   backgroundColor: "#fafafa",
   padding: "15px 30px",
   borderRadius: "0",
-  border: "#797979 1px solid",
+  // border: "#797979 1px solid",
+  border: "none",
   fontFamily: "Marko One",
   fontWeight: "normal",
 };
 
-export default function VideoLayout({ data }) {
-  //   const [vidData, setVidData] = useState("");
-  // const [openModal, setOpenModal] = useState(false);
+export default function VideoLayout({ data, color }) {
 
   useEffect(() => {
     if (data) {
-      // console.log(data);
       data.map((item) => {
-        // console.log(item.transcription);
         if (item.transcription) {
           console.log("transcript", item.transcription);
         }
@@ -32,7 +29,7 @@ export default function VideoLayout({ data }) {
   return (
     data &&
     data.map((item, index) => (
-      <Card key={index} style={cardStyle}>
+      <Card className="videoCard" key={index} style={cardStyle}>
         <CardContent style={{ display: "flex", flexDirection: "row" }}>
           <CardMedia component="iframe" src={item.src} height="330" />
           <div
@@ -46,7 +43,7 @@ export default function VideoLayout({ data }) {
                 : { display: "block" }
             }
           >
-            <h3 style={{ paddingLeft: "40px" }}>{item.title}</h3>
+            <h3 style={{ paddingLeft: "40px", color: color }}>{item.title}</h3>
             {/* {item.title.split("\n").map((line) => (
               <h3 key={line} style={{ paddingLeft: "40px" }}>
                 {item.title}
@@ -54,7 +51,7 @@ export default function VideoLayout({ data }) {
             ))} */}
 
             {item.transcription ? (
-              <a href={item.transcription} target="_blank">
+              <a href={`http://docs.google.com/gview?url=${item.transcription}`} target="_blank">
                 <button className="transcriptBtn">
                   See Transciption
                 </button>

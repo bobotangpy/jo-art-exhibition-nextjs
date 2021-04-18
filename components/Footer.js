@@ -12,7 +12,7 @@ export default function Footer() {
             <a href="/">Home</a>
           </label>
           <label>
-            <a href="/background_objective">Background</a>
+            <a href="/background">Background</a>
           </label>
           <label>
             <a href="/public_discourse">Public Discourse</a>
@@ -21,7 +21,7 @@ export default function Footer() {
         <div className={styles.column}>
           <p style={{ paddingTop: "30px" }}></p>
           <label>
-            <a href="/artwork">Artwork</a>
+            <a href="/artworks">Artworks</a>
           </label>
           <label>
             <a href="/local_global_response">Local and Global Response</a>

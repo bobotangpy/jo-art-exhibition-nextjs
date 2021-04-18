@@ -1,4 +1,4 @@
-$heading: 'Marko One', serif;
+$heading: "Marko One", serif;
 // $heading: "Prata", "san-serif";
 $body: "Muli", "san-serif";
 
@@ -11,7 +11,7 @@ $darker-red: #e07e71;
 $mild-red: #eca499;
 $bg-red: #d26a5f;
 $text-red: #fff1f0;
-$light-yellow: #fffcde;
+$light-yellow: #fffdeb;
 $grey: #f0f3fb;
 
 $bg-color: #fafafa;
@@ -32,17 +32,42 @@ $text-color: #13130d;
     // font-weight: bold;
     font-size: 18px;
     cursor: pointer;
+  }
 
-    background-color: $bg-color;
-    color: $dark-blue;
-    border-color: $dark-blue;
+  .edu {
+    background-color: $light-yellow;
+    color: $darker-red;
+    border-color: $darker-red;
     border-width: 2px;
     border-style: solid;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
-      background-color: $dark-blue;
-      color: $bg-color;
-      border-color: $dark-blue;
+      background-color: $darker-red;
+      color: $light-yellow;
+      border-color: $darker-red;
     }
+  }
+
+  .hkchina {
+    background-color: $light-yellow;
+    color: $text-blue;
+    border-color: $text-blue;
+    border-width: 2px;
+    border-style: solid;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $text-blue;
+      color: $light-yellow;
+      border-color: $text-blue;
+    }
+  }
+}
+
+/* Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  .discourseBtns {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

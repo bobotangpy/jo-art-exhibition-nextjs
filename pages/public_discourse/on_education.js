@@ -40,10 +40,10 @@ export default function OnEducation({data}) {
           <p>On Education</p>
         </Breadcrumbs>
 
-        <header className="pageTitle">On Education</header>
+        <header className="pageTitle" style={{color: "#e07e71"}}>On Education</header>
 
         <div className="textContent" style={{ marginTop: "20px" }}>
-          <VideoLayout data={pageData} />
+          <VideoLayout data={pageData} color={"#e07e71"} />
         </div>
       </div>
       <Footer />

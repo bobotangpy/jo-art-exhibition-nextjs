@@ -40,10 +40,10 @@ export default function OnHkAndChina({ data }) {
           <p>On Hong Kong and China</p>
         </Breadcrumbs>
 
-        <header className="pageTitle">On Hong Kong and China</header>
+        <header className="pageTitle" style={{color: "#33699f"}}>On Hong Kong and China</header>
 
         <div className="textContent" style={{ marginTop: "20px" }}>
-          <VideoLayout data={pageData} />
+          <VideoLayout data={pageData} color={"#33699f"} />
         </div>
       </div>
       <Footer />

@@ -54,10 +54,6 @@ export default function LocalGlobalResponse({
       setMigration(migrationData);
       setEducation(educationData);
     }
-    
-    // window.addEventListener("mousemove", () => {
-
-    // })
   }, []);
 
   useEffect(() => {

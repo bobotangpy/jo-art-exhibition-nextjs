@@ -1,5 +1,5 @@
-import * as React from "react";
 import Footer from "../components/Footer";
+import styles from '../styles/PublicDiscourse.module.scss'
 
 export default function PublicDiscourse() {
   return (
@@ -24,13 +24,16 @@ export default function PublicDiscourse() {
             different perspectives through the following videos.
           </p>
 
-          <div className="btnsDiv">
+          {/* <div className="btnsDiv"> */}
+          <div className={styles.discourseBtns}>
             <a href="/public_discourse/on_education">
-              <button className="option">On Education</button>
+              {/* <button className="option">On Education</button> */}
+              <button className={styles.edu}>On Education</button>
             </a>
 
             <a href="/public_discourse/on_hkandchina">
-              <button className="option">On Hong Kong And China</button>
+              {/* <button className="option">On Hong Kong And China</button> */}
+              <button className={styles.hkchina}>On Hong Kong And China</button>
             </a>
           </div>
         </div>
