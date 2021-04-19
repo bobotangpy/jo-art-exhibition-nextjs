@@ -15,21 +15,16 @@ const Content = ({ data, family }) => {
 
   return (
     <>
-      <p>{data[0].narrative}</p>
+      {data[0].narrative.split("\n").map((line) => (
+        <p key={line}>{line}</p>
+      ))}
 
-      {/* {data.map((item) =>
-        item.hasOwnProperty("narrative") ? (
-          <p>{item.narrative}</p>
-        ) : (
-          <></>
-        )
-      )} */}
       <div className={`btnsDiv ${family}`}>
         {data.map((item, index) =>
           item.hasOwnProperty("person") ? (
             <button
-              className="option"
               key={index}
+              className="option"
               onClick={() => {
                 handleOpenModal;
                 setItemData(item);
@@ -46,6 +41,7 @@ const Content = ({ data, family }) => {
 
       {itemData ? (
         <StoryboardModal
+          key={itemData.person}
           openModal={openModal}
           handleOpenModal={handleOpenModal}
           data={itemData}
@@ -60,7 +56,6 @@ const Content = ({ data, family }) => {
 export default function FamilyNarrative({ chans, lees, wongs }) {
   const router = useRouter();
   const [family, setFamily] = useState(null);
-  const [color, setColor] = useState(null);
 
   useEffect(() => {
     setFamily(router.query.family);
@@ -73,8 +68,8 @@ export default function FamilyNarrative({ chans, lees, wongs }) {
           <Link color="inherit" href="/">
             Home
           </Link>
-          <Link color="inherit" href="/interactive_storyboard">
-            Interactive Storyboard
+          <Link color="inherit" href="/family_case_studies">
+            3 Family Case Studies
           </Link>
           <p>The {family}'s</p>
         </Breadcrumbs>
@@ -98,8 +93,11 @@ export default function FamilyNarrative({ chans, lees, wongs }) {
 }
 
 export const getStaticProps = async () => {
+  // const getData = await fetch(
+  //   "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/storyboardData.json"
+  // );
   const getData = await fetch(
-    "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/storyboardData.json"
+    "http://localhost:3000/assets/_data/storyboardData.json"
   );
   const res = await getData.json();
   let chans, lees, wongs;

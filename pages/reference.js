@@ -1,32 +1,32 @@
-// import { useEffect } from "react";
-// import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 
-export default function Reference({data}) {
-  // const [ref, setRef] = useState(null);
+const indentStyle = {
+  marginLeft: "10%",
+};
 
-  // useEffect(() => {
-    // console.log(data);
-    // getData()
-  // }, []);
-
-  // const getData = async () => {
-  //   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/Reference.txt";
-  //   const getData = await fetch(url);
-  //   const data = await getData.text();
-
-  //   if (data) setRef(data);
-  // }
-
+export default function Reference({ data }) {
   return (
     <>
       <div className="pageContent fadeIn">
         <header className="pageTitle">Reference</header>
 
         <div className="textContent">
-          {data && data.split("##").map((line) => (
-            <p key={line}>{line}</p>
-          ))}
+          {data &&
+            data.split("##").map((line) => (
+              <p key={line}>
+                {line.split("^^").map((span, index) => (
+                  <>
+                    <span
+                      key={span}
+                      style={index !== 0 ? indentStyle : { margin: "0" }}
+                    >
+                      {span}
+                    </span>
+                    <br />
+                  </>
+                ))}
+              </p>
+            ))}
         </div>
       </div>
       <Footer />
@@ -35,7 +35,8 @@ export default function Reference({data}) {
 }
 
 export async function getStaticProps() {
-  const url = "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/Reference.txt";
+  // const url = "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/Reference.txt";
+  const url = "http://localhost:3000/assets/_data/Reference.txt";
   const getData = await fetch(url);
   const data = await getData.text();
 

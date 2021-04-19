@@ -4,11 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "../styles/Home.module.scss";
 
-/* TODO:
-- @media
-- local & global response !!!
-*/
-
 const sliderSetting = {
   dots: true,
   fade: true,
@@ -41,7 +36,6 @@ export default function Home() {
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  // className={styles.image}
                   src="/assets/homepage/1.jpeg"
                   alt="1"
                   width="100%"
@@ -53,7 +47,6 @@ export default function Home() {
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  // className={styles.image}
                   src="/assets/homepage/2.jpg"
                   alt="2"
                   width="100%"
@@ -65,7 +58,6 @@ export default function Home() {
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  // className={styles.image}
                   src="/assets/homepage/3.jpg"
                   alt="3"
                   width="100%"
@@ -77,7 +69,6 @@ export default function Home() {
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  // className={styles.image}
                   src="/assets/homepage/4.jpg"
                   alt="4"
                   width="100%"
@@ -89,7 +80,6 @@ export default function Home() {
             <div className={styles.carouselCard}>
               <div className={styles.overlay}>
                 <img
-                  // className={styles.image}
                   src="/assets/homepage/5.jpg"
                   alt="5"
                   width="100%"

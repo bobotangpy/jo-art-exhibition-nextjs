@@ -32,7 +32,7 @@ const TableData = ({ data }) => {
   );
 };
 
-export default function LocalGlobalResponse({
+export default function LocalGlobalResponses({
   data,
   identityData,
   artData,
@@ -82,7 +82,7 @@ export default function LocalGlobalResponse({
   return (
     <>
       <div className="pageContent fadeIn">
-        <header className="pageTitle">Local and Global Response</header>
+        <header className="pageTitle">Local and Global Responses</header>
 
         <div className="textContent">
           <p>
@@ -105,7 +105,7 @@ export default function LocalGlobalResponse({
         onMouseLeave={() => setHideDiv(false)}
       >
         <div className={hideDiv ? styles.hideDiv : styles.overlay}>
-          &nbsp;&nbsp;i&nbsp;&nbsp;a&nbsp;m...
+          &nbsp;i&nbsp;am...
         </div>
         <div className={styles.images}>
           {images.map((item, index) => (

@@ -81,10 +81,10 @@ const Cards = ({ data, name }) => {
         {/* <Link href={`/interactive_stroyboard/${name.toLowerCase()}s`}> */}
         <Link
           href={{
-            pathname: "/familyNarrative",
+            pathname: "/family_narrative",
             query: { family: `${name}` },
           }}
-          as={`/familyNarrative/${name.toLowerCase()}s`}
+          as={`/family_case_studies/${name.toLowerCase()}s`}
         >
           <CardContent className="name" style={constentStyle}>
             <h3>The {name}'s</h3>
@@ -121,7 +121,7 @@ const Cards = ({ data, name }) => {
   );
 };
 
-export default function InterActiveStoryboard({ chans, lees, wongs }) {
+export default function FamilyCaseStudies({ chans, lees, wongs }) {
   // const [data, setData] = useState(null);
   const [chansData, setChansData] = useState(chans);
   const [leesData, setLeesData] = useState(lees);
@@ -175,8 +175,10 @@ export default function InterActiveStoryboard({ chans, lees, wongs }) {
           </p>
 
           <p>
-            Three family stories are shared here. Let’s learn how each member of
-            the families interprets the interplays among the concepts of home,
+            Three family stories are shared here, each representing different
+            family dynamics. You will read the narratives from the young adults
+            in the families, then explore how each of the participating family
+            members interprets the interplays among the concepts of home,
             identity, citizenship, social responsibility, and education.
           </p>
 

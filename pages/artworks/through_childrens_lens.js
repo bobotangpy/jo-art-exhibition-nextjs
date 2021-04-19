@@ -2,10 +2,6 @@ import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import BrushIcon from "@material-ui/icons/Brush";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import MoreIcon from "@material-ui/icons/More";
@@ -18,17 +14,17 @@ const linkStyle = {
 
 const activeStyle = {
   // color: "#2d3757",
-  color: "#33699f"
+  color: "#33699f",
 };
 
 const inactiveStyle = {
   // color: "#2d3757b5",
-  color: "#33699fb5"
+  color: "#33699fb5",
 };
 
 const Linksss = ({ items }) => {
   return items.map((item, index) => (
-    <div className="fadeInDown" key={index} style={{ paddingBottom: "20px" }}>
+    <div className="links" key={index} style={{ paddingBottom: "20px" }}>
       <a href={item.src} target="_blank" rel="noreferrer" style={linkStyle}>
         {item.title}
       </a>
@@ -93,7 +89,9 @@ export default function ChildrensLens() {
           </Link>
           <p>Through Children's Lens</p>
         </Breadcrumbs>
-        <header className="pageTitle" style={{color: "#33699f"}}>Through Children's Lens</header>
+        <header className="pageTitle" style={{ color: "#33699f" }}>
+          Through Children's Lens
+        </header>
 
         <div className="textContent">
           <div className={styles.categories}>
@@ -142,21 +140,6 @@ export default function ChildrensLens() {
               {artworkData && links ? <Linksss items={links} /> : <></>}
             </div>
           </div>
-
-          {/* {artworkData &&
-            Object.values(artworkData).map((items, index) =>
-              items[0].category === "drawing" ? (
-                <Drawing items={items} />
-              ) : items[0].category === "photography" ? (
-                <Photography items={items} />
-              ) : items[0].category === "creative" ? (
-                <Creative items={items} />
-              ) : items[0].category === "more" ? (
-                <More items={items} />
-              ) : (
-                <></>
-              )
-            )} */}
         </div>
       </div>
       <Footer />
