@@ -24,14 +24,14 @@ export default function Footer() {
             <a href="/artworks">Artworks</a>
           </label>
           <label>
-            <a href="/local_global_response">Local and Global Response</a>
+            <a href="/local_global_responses">Local and Global Responses</a>
           </label>
           <label>
-            <a href="/interactive_storyboard">Interactive Storyboard</a>
+            <a href="/family_case_studies">3 Family Case Studies</a>
           </label>
         </div>
         <div className={styles.column}>
-          <p style={{ paddingTop: "30px" }}></p>
+          <p style={{ paddingTop: "25px" }}></p>
           <label>
             <a href="/comment">Comment</a>
           </label>

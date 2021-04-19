@@ -56,7 +56,12 @@ export default function AdultsLens() {
           </Link>
           <p>Through Adult's Lens</p>
         </Breadcrumbs>
-        <header className="pageTitle" style={{color: "#e07e71"}}>Through Adult's Lens</header>
+        <header
+          className={`pageTitle ${styles.header}`}
+          style={{ color: "#e07e71" }}
+        >
+          Through Adult's Lens
+        </header>
 
         <SRLWrapper setting={options}>
           {artworkData &&

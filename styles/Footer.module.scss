@@ -21,9 +21,8 @@ $text-color: #13130d;
   position: relative;
   padding-bottom: 10px;
   width: 100%;
-  // background: $dark-blue;
-  // color: #ffffff;
-  background-color: $bg-color;
+  // background-color: $bg-color;
+  background-color: $light-yellow;
 
   .wrapper {
     display: flex;
@@ -42,7 +41,7 @@ $text-color: #13130d;
         margin-bottom: 20px;
       }
       label {
-        padding: 10px;
+        padding: 5px 10px;
         a {
           color: #797979;
           font-family: "Muli";
@@ -55,7 +54,7 @@ $text-color: #13130d;
 /* Mobile */
 @media (min-width: 320px) and (max-width: 480px) {
   .footer {
-    height: 360px;
+    height: 200px;
   }
 
   .column {

@@ -163,7 +163,7 @@ export default function FamilyCaseStudies({ chans, lees, wongs }) {
   return (
     <>
       <div className="pageContent fadeIn">
-        <header className="pageTitle">Interactive Storyboard</header>
+        <header className="pageTitle">3 Family Case Studies</header>
 
         <div className="textContent">
           <p>

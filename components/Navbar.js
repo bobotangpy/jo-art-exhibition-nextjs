@@ -203,29 +203,29 @@ export default function Navbar() {
                 </AccordionDetails>
               </Accordion>
 
-              <Link href="/local_global_response">
+              <Link href="/local_global_responses">
                 <a
                   className={
-                    router.pathname == "/local_global_response"
+                    router.pathname == "/local_global_responses"
                       ? styles.activeLink
                       : styles.link
                   }
                   onClick={handleOpenMenu}
                 >
-                  Local and Global Response
+                  Local and Global Responses
                 </a>
               </Link>
 
-              <Link href="/interactive_storyboard">
+              <Link href="/family_case_studies">
                 <a
                   className={
-                    router.pathname == "/interactive_storyboard"
+                    router.pathname == "/family_case_studies"
                       ? styles.activeLink
                       : styles.link
                   }
                   onClick={handleOpenMenu}
                 >
-                  Interactive Storyboard
+                  3 Family Case Studies
                 </a>
               </Link>
 

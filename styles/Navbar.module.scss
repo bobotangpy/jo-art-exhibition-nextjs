@@ -23,6 +23,10 @@ $text-color: #13130d;
   justify-content: space-between;
   padding: 10px;
   height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1230;
   background-color: $dark-blue;
   color: $bg-color;
 
@@ -44,11 +48,16 @@ $text-color: #13130d;
   }
 }
 
-.navModal {
+.navModal,
+.navWrapper {
   border: none;
   &:focus {
-    outline: none;
+    outline: none !important;
   }
+}
+
+.navWrapper {
+  z-index: 1500;
 }
 
 .menu {
@@ -81,7 +90,11 @@ $text-color: #13130d;
 /* Mobile */
 @media (min-width: 320px) and (max-width: 480px) {
   .navbar p {
-    font-size: 12px;
-    padding: 10px;
+    font-size: 11px;
+    padding: 20px 0px 0 10px;
+  }
+
+  .menuIcon {
+    padding: 15px 30px !important;
   }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import StoryboardModal from "../components/StoryboardModal";
@@ -15,28 +15,27 @@ const Content = ({ data, family }) => {
 
   return (
     <>
-      {data[0].narrative.split("\n").map((line) => (
-        <p key={line}>{line}</p>
+      {data[0].narrative.split("\n").map((line, index) => (
+        <p key={index}>{line}</p>
       ))}
 
       <div className={`btnsDiv ${family}`}>
-        {data.map((item, index) =>
-          item.hasOwnProperty("person") ? (
-            <button
-              key={index}
-              className="option"
-              onClick={() => {
-                handleOpenModal;
-                setItemData(item);
-              }}
-            >
-              {item.person.charAt(0).toUpperCase()}
-              {item.person.slice(1)}
-            </button>
-          ) : (
-            <></>
-          )
-        )}
+        {data.map((item, index) => (
+          <React.Fragment key={index}>
+            {item.hasOwnProperty("person") ? (
+              <button
+                className="option"
+                onClick={() => {
+                  setItemData(item);
+                  setOpenModal(true);
+                }}
+              >
+                {item.person.charAt(0).toUpperCase()}
+                {item.person.slice(1)}
+              </button>
+            ) : null}
+          </React.Fragment>
+        ))}
       </div>
 
       {itemData ? (

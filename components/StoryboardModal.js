@@ -6,18 +6,14 @@ import styles from "../styles/StoryboardModal.module.scss";
 export default function StoryboardModal({ openModal, handleOpenModal, data }) {
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    console.log(data);
-    if (data) console.log(data.person);
-  }, []);
-
-  useEffect(() => {
-    if (open !== openModal) setOpen(openModal);
-  }, [openModal]);
+  // useEffect(() => {
+  //   console.log(openModal, data);
+  //   if (data) console.log(data.person);
+  // }, []);
 
   return (
     <Modal
-      open={open}
+      open={openModal}
       key={data.person}
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"

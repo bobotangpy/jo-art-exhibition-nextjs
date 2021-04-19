@@ -66,3 +66,13 @@ header.title {
     top: 30% !important;
   }
 }
+
+/* Small Tablets */
+@media (min-width: 481px) and (max-width: 767px),
+  (min-width: 768px) and (max-width: 1024px) {
+  header.title {
+    line-height: 60px !important;
+    padding: 0 30px !important;
+    width: auto !important;
+  }
+}

@@ -32,6 +32,10 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: #0000008a;
+
+  &:focus {
+    background-color: $light-yellow;
+  }
 }
 
 button,
@@ -43,14 +47,14 @@ textarea {
   }
 }
 
-button {
-  transition: all 0.3s ease-in-out;
-  :hover {
-    background-color: $mild-blue;
-    color: $light-yellow;
-    border-color: $mild-blue;
-  }
-}
+// button {
+//   transition: all 0.3s ease-in-out;
+//   :hover {
+//     background-color: $mild-blue;
+//     color: $light-yellow;
+//     border-color: $mild-blue;
+//   }
+// }
 
 header {
   font-family: $heading;
@@ -92,7 +96,7 @@ p {
   .pageTitle {
     font-size: 35px;
     font-weight: bold;
-    margin: 30px 0 10px 0;
+    margin: 100px 0 10px 0;
   }
 
   .textContent {
@@ -229,12 +233,13 @@ p {
     padding: 20px 40px;
     border: none;
     font-size: 18px;
+    font-weight: bolder;
     cursor: pointer;
 
     background-color: $bg-color;
     color: $dark-blue;
     border-color: $dark-blue;
-    border-width: 2px;
+    border-width: 3.5px;
     border-style: solid;
     transition: all 0.3s ease-in-out;
     &:hover {
@@ -256,7 +261,7 @@ p {
     background-color: $light-yellow !important;
     color: #88cbdb !important;
     border-color: #88cbdb !important;
-    border-width: 2px !important;
+    border-width: 3.5px !important;
     border-style: solid !important;
     transition: all 0.3s ease-in-out !important;
     &:hover {
@@ -273,7 +278,7 @@ p {
     background-color: $light-yellow !important;
     color: #eca499 !important;
     border-color: #eca499 !important;
-    border-width: 2px !important;
+    border-width: 3.5px !important;
     border-style: solid !important;
     transition: all 0.3s ease-in-out !important;
     &:hover {
@@ -290,7 +295,7 @@ p {
     background-color: $light-yellow !important;
     color: #33699f !important;
     border-color: #33699f !important;
-    border-width: 2px !important;
+    border-width: 3.5px !important;
     border-style: solid !important;
     transition: all 0.3s ease-in-out !important;
     &:hover {
@@ -305,14 +310,18 @@ p {
 @media (min-width: 320px) and (max-width: 480px) {
   .pageContent {
     padding: 25px;
-    
+
     .pageTitle {
       font-size: 27px;
-      margin: 20px 0 10px 0;
+    }
+
+    .textContent {
+      margin-top: 0;
     }
   }
 
-  .flexRow, .btnsDiv {
+  .flexRow,
+  .btnsDiv {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -322,12 +331,12 @@ p {
     word-break: break-word;
   }
 
-  // Breadcrumbs 
+  // Breadcrumbs
   .MuiBreadcrumbs-ol {
     font-size: 13px;
   }
 
-  // Home Page //
+  // Menu Sidebar //
   .navWrapper {
     width: 100% !important;
     padding: 0 !important;
@@ -337,12 +346,56 @@ p {
   .MuiCardContent-root {
     flex-direction: column !important;
   }
-  .videoCard h3 {
-    padding-left: 0 !important;
+  .videoCard {
+    padding: 15px !important;
+
+    h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      padding-left: 0 !important;
+    }
+  }
+  .MuiCardMedia-media {
+    max-width: 100% !important;
+    height: 60% !important;
+  }
+  .MuiCardContent-root:last-child {
+    padding-bottom: 10px !important;
+  }
+  .transcriptBtn {
+    margin: 15px;
   }
 
   // Interactive Storyboard //
   .MuiCard-root {
     margin-bottom: 30px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 767px),
+  (min-width: 768px) and (max-width: 1024px) {
+  .pageContent {
+    padding: 25px 50px;
+  }
+
+  .flexRow {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  // Menu Sidebar //
+  .navWrapper {
+    width: 50% !important;
+  }
+
+  // Interactive Storyboard Cards //
+  .MuiCard-root {
+    margin-bottom: 30px !important;
+  }
+
+  // Through Children's Lens
+  .MuiSvgIcon-root {
+    margin-right: 15px !important;
   }
 }

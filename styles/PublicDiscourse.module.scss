@@ -29,7 +29,7 @@ $text-color: #13130d;
     padding: 20px 40px;
     // border-radius: 4px;
     border: none;
-    // font-weight: bold;
+    font-weight: bolder;
     font-size: 18px;
     cursor: pointer;
   }
@@ -38,7 +38,7 @@ $text-color: #13130d;
     background-color: $light-yellow;
     color: $darker-red;
     border-color: $darker-red;
-    border-width: 2px;
+    border-width: 3.5px;
     border-style: solid;
     transition: all 0.3s ease-in-out;
     &:hover {
@@ -52,7 +52,7 @@ $text-color: #13130d;
     background-color: $light-yellow;
     color: $text-blue;
     border-color: $text-blue;
-    border-width: 2px;
+    border-width: 3.5px;
     border-style: solid;
     transition: all 0.3s ease-in-out;
     &:hover {

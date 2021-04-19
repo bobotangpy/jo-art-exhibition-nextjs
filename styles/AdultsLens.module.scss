@@ -1,4 +1,4 @@
-$heading: 'Marko One', serif;
+$heading: "Marko One", serif;
 // $heading: "Prata", "san-serif";
 $body: "Muli", "san-serif";
 
@@ -33,6 +33,38 @@ $text-color: #13130d;
   }
 
   label {
-      font-size: 16.5px;
+    font-size: 16.5px;
+  }
+}
+
+/* Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  .wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+
+    a {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 767px),
+  (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    margin-bottom: 30px !important;
+  }
+
+  .wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+
+    a {
+      margin-bottom: 40px;
+      margin-right: 40px;
+    }
   }
 }
