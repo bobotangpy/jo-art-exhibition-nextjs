@@ -47,7 +47,6 @@ export default function LocalGlobalResponses({
   const [hideDiv, setHideDiv] = useState(false);
 
   useEffect(() => {
-    // getData()
     if (data) {
       setiDentity(identityData);
       setArt(artData);
@@ -60,24 +59,6 @@ export default function LocalGlobalResponses({
     if (identity && art && migration && education)
       setImages((images) => images.concat(identity, art, migration, education));
   }, [identity]);
-
-  // const getData = async () => {
-  //   const url = "https://visualizing-the-civic-identity-struggle-in-hk.vercel.app/assets/_data/localGlobalImages.json";
-  //   const getData = await fetch(url);
-  //   const data = await getData.json();
-
-  //   for (let [key, val] of Object.entries(data)) {
-  //     key === "identity"
-  //       ? setIdentityData(val)
-  //       : key === "art"
-  //       ? setArtData(val)
-  //       : key === "migration"
-  //       ? setMigrationData(val)
-  //       : key === "education"
-  //       ? setEducationData(val)
-  //       : "";
-  //   }
-  // }
 
   return (
     <>
@@ -105,7 +86,7 @@ export default function LocalGlobalResponses({
         onMouseLeave={() => setHideDiv(false)}
       >
         <div className={hideDiv ? styles.hideDiv : styles.overlay}>
-          &nbsp;i&nbsp;am...
+          i&nbsp;&nbsp;&nbsp;a&nbsp;m...
         </div>
         <div className={styles.images}>
           {images.map((item, index) => (

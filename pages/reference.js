@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 
 const indentStyle = {
@@ -5,26 +6,45 @@ const indentStyle = {
 };
 
 export default function Reference({ data }) {
+  const [dataset, setDataSet] = useState(null);
+
+  useEffect(() => {
+    // console.log(JSON.parse(data));
+    // console.log(Object.values(JSON.parse(data)));
+    setDataSet(Object.values(JSON.parse(data)));
+  }, []);
   return (
     <>
       <div className="pageContent fadeIn">
         <header className="pageTitle">Reference</header>
 
         <div className="textContent">
-          {data &&
-            data.split("##").map((line) => (
-              <p key={line}>
-                {line.split("^^").map((span, index) => (
-                  <>
-                    <span
-                      key={span}
-                      style={index !== 0 ? indentStyle : { margin: "0" }}
-                    >
-                      {span}
+          {dataset &&
+            dataset.map((line, index) => (
+              <p key={index}>
+                {line.map((part, index) =>
+                  part.includes(">>") ? (
+                    <span key={part} style={{ fontStyle: "italic" }}>
+                      {part.split(">>")[1]}
                     </span>
-                    <br />
-                  </>
-                ))}
+                  ) : part.includes("^^") ? (
+                    <>
+                      <br />
+                      <span key={part} style={indentStyle}>
+                        {part.split("^^")[1]}
+                      </span>
+                    </>
+                  ) : part.includes("^^") && part.includes(">>") ? (
+                    <>
+                      <br />
+                      <span key={part} style={indentStyle}>
+                        <i>{part.split(">>")[1]}</i>
+                      </span>
+                    </>
+                  ) : (
+                    <span>{part}</span>
+                  )
+                )}
               </p>
             ))}
         </div>
@@ -35,7 +55,8 @@ export default function Reference({ data }) {
 }
 
 export async function getStaticProps() {
-  const url = "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/Reference.txt";
+  const url = "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/reference.json";
+  // const url = "http://localhost:3000/assets/_data/reference.json";
   const getData = await fetch(url);
   const data = await getData.text();
 
