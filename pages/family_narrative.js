@@ -92,11 +92,8 @@ export default function FamilyNarrative({ chans, lees, wongs }) {
 }
 
 export const getStaticProps = async () => {
-  // const getData = await fetch(
-  //   "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/storyboardData.json"
-  // );
   const getData = await fetch(
-    "http://localhost:3000/assets/_data/storyboardData.json"
+    "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/storyboardData.json"
   );
   const res = await getData.json();
   let chans, lees, wongs;

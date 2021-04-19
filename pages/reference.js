@@ -35,8 +35,7 @@ export default function Reference({ data }) {
 }
 
 export async function getStaticProps() {
-  // const url = "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/Reference.txt";
-  const url = "http://localhost:3000/assets/_data/Reference.txt";
+  const url = "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/Reference.txt";
   const getData = await fetch(url);
   const data = await getData.text();
 
