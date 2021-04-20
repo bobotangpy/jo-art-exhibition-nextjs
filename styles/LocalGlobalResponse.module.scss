@@ -81,11 +81,31 @@ $text-color: #13130d;
   }
 }
 
+/* Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    height: 180px !important;
+  }
+
+  .overlay {
+    font-size: 23vw;
+    padding-top: 50px;
+  }
+
+  .images table {
+    margin: 0 5px !important;
+  }
+}
+
 /* Tablets */
 @media (min-width: 481px) and (max-width: 767px),
   (min-width: 768px) and (max-width: 1024px) {
+    .container {
+      height: 380px !important;
+    }
+
   .overlay {
-    font-size: 25vw;
+    font-size: 23vw;
     padding-top: 150px;
   }
 }
