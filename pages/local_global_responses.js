@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useRef } from "react";
 import Footer from "../components/Footer";
 import styles from "../styles/LocalGlobalResponse.module.scss";
 
@@ -39,6 +39,8 @@ export default function LocalGlobalResponses({
   migrationData,
   educationData,
 }) {
+  const divRef = useRef(null);
+
   const [identity, setiDentity] = useState(null);
   const [art, setArt] = useState(null);
   const [migration, setMigration] = useState(null);
@@ -54,6 +56,71 @@ export default function LocalGlobalResponses({
       setEducation(educationData);
     }
   }, []);
+
+  const checkMouse = (e) => {
+    let tableW = 246;
+    let identity = document.querySelectorAll("table.identity")[0].offsetLeft;
+    let art = document.querySelectorAll("table.art")[0].offsetLeft;
+    let migration = document.querySelectorAll("table.migration")[0].offsetLeft;
+    let edu = document.querySelectorAll("table.education")[0].offsetLeft;
+
+    let divTop = document.getElementsByClassName("content")[0].offsetTop;
+    let divHeight = document.getElementsByClassName("content")[0].clientHeight;
+
+    const withinDiv = e.clientY > divTop && e.clientY < divTop + divHeight;
+
+    // console.log(identity, art, migration, edu);
+    // console.log(document.querySelectorAll("div#overlay")[0].hidden);
+
+    if (e.clientY < divTop && e.clientY > divTop + divHeight) {
+      return document
+        .querySelectorAll("table")
+        .map((el) => (el.style.opacity = 100));
+    }
+
+    if (e.clientX > identity && e.clientX < identity + tableW && withinDiv) {
+      document.querySelectorAll("table")[0].style.opacity = 100;
+      document.querySelectorAll("table")[1].style.opacity = 0;
+      document.querySelectorAll("table")[2].style.opacity = 0;
+      document.querySelectorAll("table")[3].style.opacity = 0;
+    } else if (e.clientX > art && e.clientX < art + tableW && withinDiv) {
+      document.querySelectorAll("table")[0].style.opacity = 0;
+      document.querySelectorAll("table")[1].style.opacity = 100;
+      document.querySelectorAll("table")[2].style.opacity = 0;
+      document.querySelectorAll("table")[3].style.opacity = 0;
+    } else if (
+      e.clientX > migration &&
+      e.clientX < migration + tableW &&
+      withinDiv
+    ) {
+      document.querySelectorAll("table")[0].style.opacity = 0;
+      document.querySelectorAll("table")[1].style.opacity = 0;
+      document.querySelectorAll("table")[2].style.opacity = 100;
+      document.querySelectorAll("table")[3].style.opacity = 0;
+    } else if (e.clientX > edu && e.clientX < edu + tableW && withinDiv) {
+      document.querySelectorAll("table")[0].style.opacity = 0;
+      document.querySelectorAll("table")[1].style.opacity = 0;
+      document.querySelectorAll("table")[2].style.opacity = 0;
+      document.querySelectorAll("table")[3].style.opacity = 100;
+    } else {
+      let arr = Array.from(document.querySelectorAll("table"));
+      return arr.map((el) => (el.style.opacity = 100));
+    }
+  };
+
+  const eventListner = (e) => {
+    if (divRef) {
+      checkMouse(e);
+    }
+  };
+
+  useEffect(() => {
+    if (divRef) {
+      window.addEventListener("mousemove", (e) => eventListner(e));
+      return () =>
+        window.removeEventListener("mousemove", (e) => eventListner(e));
+    }
+  }, [eventListner]);
 
   useEffect(() => {
     if (identity && art && migration && education)
@@ -81,14 +148,14 @@ export default function LocalGlobalResponses({
       </div>
 
       <div
-        className={styles.container}
+        className={`${styles.container} content`}
         onMouseEnter={() => setHideDiv(true)}
         onMouseLeave={() => setHideDiv(false)}
       >
-        <div className={hideDiv ? styles.hideDiv : styles.overlay}>
+        <div className={hideDiv ? styles.hideDiv : styles.overlay} id="overlay">
           i&nbsp;&nbsp;&nbsp;a&nbsp;m...
         </div>
-        <div className={styles.images}>
+        <div className={styles.images} ref={divRef}>
           {images.map((item, index) => (
             <table
               className={styles.table}
@@ -102,7 +169,7 @@ export default function LocalGlobalResponses({
           ))}
         </div>
       </div>
-      <Footer />
+      <Footer className="footer" />
     </>
   );
 }
