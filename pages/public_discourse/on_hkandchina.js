@@ -30,7 +30,7 @@ export default function OnHkAndChina({ data }) {
   return (
     <>
       <div className="pageContent fadeIn">
-        <Breadcrumbs aria-label="breadcrumb">
+        <Breadcrumbs aria-label="breadcrumb" style={{ marginTop: "70px" }}>
           <Link color="inherit" href="/">
             Home
           </Link>
@@ -40,7 +40,12 @@ export default function OnHkAndChina({ data }) {
           <p>On Hong Kong and China</p>
         </Breadcrumbs>
 
-        <header className="pageTitle" style={{color: "#33699f"}}>On Hong Kong and China</header>
+        <header
+          className="pageTitle"
+          style={{ color: "#33699f", marginTop: "30px" }}
+        >
+          On Hong Kong and China
+        </header>
 
         <div className="textContent" style={{ marginTop: "20px" }}>
           <VideoLayout data={pageData} color={"#33699f"} />

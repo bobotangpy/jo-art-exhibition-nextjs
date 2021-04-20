@@ -80,7 +80,7 @@ export default function ChildrensLens() {
   return (
     <>
       <div className="pageContent fadeIn">
-        <Breadcrumbs aria-label="breadcrumb">
+        <Breadcrumbs aria-label="breadcrumb" style={{ marginTop: "70px" }}>
           <Link color="inherit" href="/">
             Home
           </Link>
@@ -89,7 +89,7 @@ export default function ChildrensLens() {
           </Link>
           <p>Through Children's Lens</p>
         </Breadcrumbs>
-        <header className="pageTitle" style={{ color: "#33699f" }}>
+        <header className="pageTitle" style={{ color: "#33699f", marginTop:"30px" }}>
           Through Children's Lens
         </header>
 
