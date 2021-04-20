@@ -16,16 +16,6 @@ const cardStyle = {
 
 export default function VideoLayout({ data, color }) {
 
-  // useEffect(() => {
-  //   if (data) {
-  //     data.map((item) => {
-  //       if (item.transcription) {
-  //         console.log("transcript", item.transcription);
-  //       }
-  //     });
-  //   }
-  // }, []);
-
   return (
     data &&
     data.map((item, index) => (
@@ -39,6 +29,7 @@ export default function VideoLayout({ data, color }) {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    width: "500px"
                   }
                 : { display: "block" }
             }

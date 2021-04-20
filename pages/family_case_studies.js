@@ -34,18 +34,7 @@ const constentStyle = {
 //   padding: "3px 5px",
 // };
 
-const Cards = ({ data, name }) => {
-  // const [openModal, setOpenModal] = useState(false);
-  // const [itemData, setItemData] = useState("");
-
-  // useEffect(() => {
-  //   if (itemData) console.log(itemData);
-  // }, [itemData]);
-
-  // const handleOpenModal = () => {
-  //   setOpenModal(!openModal);
-  // };
-
+const Cards = ({ name }) => {
   const AvatarIcon = ({ name }) => {
     return name[0] === "C" ? (
       <Avatar
@@ -78,7 +67,6 @@ const Cards = ({ data, name }) => {
     <>
       <Card style={{ minWidth: "250px", maxWidth: "250px" }}>
         <AvatarIcon name={name} />
-        {/* <Link href={`/interactive_stroyboard/${name.toLowerCase()}s`}> */}
         <Link
           href={{
             pathname: "/family_narrative",
@@ -90,75 +78,15 @@ const Cards = ({ data, name }) => {
             <h3>The {name}'s</h3>
           </CardContent>
         </Link>
-
-        {/* <CardActions style={{ justifyContent: "center", flexWrap: "wrap" }}>
-          {data.map((item, index) => (
-            <Button
-              size="small"
-              key={index}
-              style={btnStyle}
-              onClick={() => {
-                handleOpenModal();
-                setItemData(item);
-              }}
-            >
-              {item.person}
-            </Button>
-          ))}
-        </CardActions> */}
       </Card>
-
-      {/* {itemData ? (
-        <StoryboardModal
-          openModal={openModal}
-          handleOpenModal={handleOpenModal}
-          data={itemData}
-        />
-      ) : (
-        <></>
-      )} */}
     </>
   );
 };
 
 export default function FamilyCaseStudies({ chans, lees, wongs }) {
-  // const [data, setData] = useState(null);
   const [chansData, setChansData] = useState(chans);
   const [leesData, setLeesData] = useState(lees);
   const [wongsData, setWongsData] = useState(wongs);
-
-  useEffect(() => {
-    // getData();
-  }, []);
-
-  // useEffect(() => {
-  //   if (data) {
-  //     // console.log(data);
-
-  //     for (let [key, val] of Object.entries(data)) {
-  //       switch (key) {
-  //         case "chans":
-  //           setChansData(val);
-  //           break;
-  //         case "lees":
-  //           setLeesData(val);
-  //           break;
-  //         case "wongs":
-  //           setWongsData(val);
-  //           break;
-  //         default:
-  //           break;
-  //       }
-  //     }
-  //   }
-  // }, [data]);
-
-  // const getData = async () => {
-  //   const getData = await fetch("/assets/_data/storyboardData.json");
-  //   const res = await getData.json();
-
-  //   if (res) setData(res);
-  // };
 
   return (
     <>

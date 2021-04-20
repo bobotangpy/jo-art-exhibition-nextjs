@@ -6,10 +6,11 @@ import styles from "../styles/StoryboardModal.module.scss";
 export default function StoryboardModal({ openModal, handleOpenModal, data }) {
   const [open, setOpen] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(openModal, data);
-  //   if (data) console.log(data.person);
-  // }, []);
+  useEffect(() => {
+    if (data) {
+      console.log(Object.values(data.answers));
+    }
+  }, []);
 
   return (
     <Modal
@@ -34,10 +35,7 @@ export default function StoryboardModal({ openModal, handleOpenModal, data }) {
                   <h4 key={index}>
                     <b>{Object.values(item)}</b>
                   </h4>
-
-                  {data.answers.map((item, index) => (
-                    <p key={index}>{Object.values(item)}</p>
-                  ))}
+                  <p>{Object.values(data.answers[index])}</p>
                   <Divider light />
                 </>
               ))}

@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import styles from "../styles/LocalGlobalResponse.module.scss";
 
 const TableData = ({ data }) => {
-  // console.log(data);
   let arr = Object.values(data);
   let group = [];
 
@@ -153,7 +152,7 @@ export default function LocalGlobalResponses({
         onMouseLeave={() => setHideDiv(false)}
       >
         <div className={hideDiv ? styles.hideDiv : styles.overlay} id="overlay">
-          i&nbsp;&nbsp;&nbsp;a&nbsp;m...
+          i&nbsp;am...
         </div>
         <div className={styles.images} ref={divRef}>
           {images.map((item, index) => (

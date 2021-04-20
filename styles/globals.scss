@@ -47,15 +47,6 @@ textarea {
   }
 }
 
-// button {
-//   transition: all 0.3s ease-in-out;
-//   :hover {
-//     background-color: $mild-blue;
-//     color: $light-yellow;
-//     border-color: $mild-blue;
-//   }
-// }
-
 header {
   font-family: $heading;
 }
@@ -92,6 +83,7 @@ p {
   color: $text-color;
   // margin-bottom: 500px;
   position: relative;
+  overflow-y: scroll;
 
   .pageTitle {
     font-size: 35px;
@@ -210,8 +202,9 @@ p {
   color: $dark-blue;
   margin: 30px 15px;
   padding: 15px 30px;
-  border: 2px solid $dark-blue;
+  border: 3.5px solid $dark-blue;
   font-size: 14px;
+  font-weight: bolder;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {

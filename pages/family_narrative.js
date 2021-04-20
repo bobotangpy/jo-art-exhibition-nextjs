@@ -63,7 +63,7 @@ export default function FamilyNarrative({ chans, lees, wongs }) {
   return (
     <>
       <div className="pageContent fadeIn">
-        <Breadcrumbs aria-label="breadcrumb">
+        <Breadcrumbs aria-label="breadcrumb" style={{ marginTop: "70px" }}>
           <Link color="inherit" href="/">
             Home
           </Link>
@@ -72,9 +72,11 @@ export default function FamilyNarrative({ chans, lees, wongs }) {
           </Link>
           <p>The {family}'s</p>
         </Breadcrumbs>
-        <header className={`pageTitle ${family}`}>The {family}'s</header>
+        <header className={`pageTitle ${family}`} style={{ marginTop: "30px" }}>
+          The {family}'s
+        </header>
 
-        <div className="textContent">
+        <div className="textContent" style={{ padding: "0px" }}>
           {family === "Chan" ? (
             <Content data={chans} family={family} />
           ) : family === "Lee" ? (
