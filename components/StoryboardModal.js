@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
 import { Modal, Divider, Fade, Backdrop } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import styles from "../styles/StoryboardModal.module.scss";
 
 export default function StoryboardModal({ openModal, handleOpenModal, data }) {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (data) {
-      console.log(Object.values(data.answers));
-    }
-  }, []);
-
   return (
     <Modal
       open={openModal}
@@ -25,7 +16,7 @@ export default function StoryboardModal({ openModal, handleOpenModal, data }) {
         timeout: 500,
       }}
     >
-      <Fade in={open}>
+      <Fade in={openModal}>
         <>
           <CloseIcon className={styles.closeIcon} onClick={handleOpenModal} />
           <div className={styles.modal}>
