@@ -2,9 +2,21 @@ import { useEffect, useState, useRef } from "react";
 import Footer from "../components/Footer";
 import styles from "../styles/LocalGlobalResponse.module.scss";
 
-const TableData = ({ data }) => {
+const TableData = ({ data, setWindow }) => {
   let arr = Object.values(data);
   let group = [];
+  let imgWidth;
+
+  if (window.innerWidth < 770 && window.innerWidth > 480) {
+    imgWidth = 80;
+    setWindow("tablet");
+  } else if (window.innerWidth < 481) {
+    imgWidth = 40;
+    setWindow("mobile");
+  } else {
+    imgWidth = 120;
+    setWindow("desktop");
+  }
 
   for (let i = 0, end = arr.length / 2; i < end; ++i) {
     group.push(arr.slice(i * 2, (i + 1) * 2));
@@ -20,7 +32,7 @@ const TableData = ({ data }) => {
                 src={`/assets/localGlobal/${image.category}/${image.name}.jpg`}
                 alt={`${image.alt}`}
                 title={`${image.alt}`}
-                width={120}
+                width={imgWidth}
                 className={styles.image}
               />
             </a>
@@ -39,22 +51,13 @@ export default function LocalGlobalResponses({
   educationData,
 }) {
   const divRef = useRef(null);
-
+  const [win, setWin] = useState("desktop");
   const [identity, setiDentity] = useState(null);
   const [art, setArt] = useState(null);
   const [migration, setMigration] = useState(null);
   const [education, setEducation] = useState(null);
   const [images, setImages] = useState([]);
   const [hideDiv, setHideDiv] = useState(false);
-
-  useEffect(() => {
-    if (data) {
-      setiDentity(identityData);
-      setArt(artData);
-      setMigration(migrationData);
-      setEducation(educationData);
-    }
-  }, []);
 
   const checkMouse = (e) => {
     let tableW = 246;
@@ -114,7 +117,25 @@ export default function LocalGlobalResponses({
   };
 
   useEffect(() => {
-    if (divRef) {
+    // if (typeof window !== undefined && window.innerWidth) {
+    //   if (window.innerWidth < 770 && window.innerWidth > 480) {
+    //     setWindow("tablet");
+    //   } else if (window.innerWidth < 481) {
+    //     setWindow("mobile");
+    //   } else setWindow(desktop);
+    // }
+
+    if (data) {
+      setiDentity(identityData);
+      setArt(artData);
+      setMigration(migrationData);
+      setEducation(educationData);
+    }
+  }, []);
+
+  useEffect(() => {
+    let widthMatch = window.matchMedia("(min-width: 770px)");
+    if (divRef && widthMatch) {
       window.addEventListener("mousemove", (e) => eventListner(e));
       return () =>
         window.removeEventListener("mousemove", (e) => eventListner(e));
@@ -122,6 +143,12 @@ export default function LocalGlobalResponses({
   }, [eventListner]);
 
   useEffect(() => {
+    // if (window.innerWidth < 770 && window.innerWidth > 480) {
+    //   setWindow("tablet");
+    // } else if (window.innerWidth < 481) {
+    //   setWindow("mobile");
+    // } else setWindow(desktop);
+
     if (identity && art && migration && education)
       setImages((images) => images.concat(identity, art, migration, education));
   }, [identity]);
@@ -151,9 +178,28 @@ export default function LocalGlobalResponses({
         onMouseEnter={() => setHideDiv(true)}
         onMouseLeave={() => setHideDiv(false)}
       >
-        <div className={hideDiv ? styles.hideDiv : styles.overlay} id="overlay">
-          i&nbsp;am...
-        </div>
+        {win === "mobile" ? (
+          <div
+            className={hideDiv ? styles.hideDiv : styles.overlay}
+            id="overlay"
+          >
+            &nbsp;i&nbsp;&nbsp;&nbsp;a&nbsp;m&nbsp;...
+          </div>
+        ) : win === "tablet" ? (
+          <div
+            className={hideDiv ? styles.hideDiv : styles.overlay}
+            id="overlay"
+          >
+            &nbsp;i&nbsp;&nbsp;a&nbsp;m&nbsp;...
+          </div>
+        ) : (
+          <div
+            className={hideDiv ? styles.hideDiv : styles.overlay}
+            id="overlay"
+          >
+            i&nbsp;am...
+          </div>
+        )}
         <div className={styles.images} ref={divRef}>
           {images.map((item, index) => (
             <table
@@ -162,7 +208,7 @@ export default function LocalGlobalResponses({
               className={Object.values(item)[0].category.substring(2)}
             >
               <tbody>
-                <TableData data={item} />
+                <TableData data={item} setWindow={setWin} />
               </tbody>
             </table>
           ))}

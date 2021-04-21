@@ -47,7 +47,7 @@ export default function AdultsLens() {
   return (
     <>
       <div className="pageContent fadeIn">
-        <Breadcrumbs aria-label="breadcrumb">
+        <Breadcrumbs aria-label="breadcrumb" style={{ marginTop: "70px" }}>
           <Link color="inherit" href="/">
             Home
           </Link>
@@ -58,7 +58,7 @@ export default function AdultsLens() {
         </Breadcrumbs>
         <header
           className={`pageTitle ${styles.header}`}
-          style={{ color: "#e07e71" }}
+          style={{ color: "#e07e71", marginTop:"30px" }}
         >
           Through Adult's Lens
         </header>
