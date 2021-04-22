@@ -45,6 +45,21 @@ export default function Navbar() {
           Exhibition
         </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-KM1PNW677B"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-KM1PNW677B');
+            `,
+          }}
+        />
       </Head>
 
       <nav className={styles.navbar}>
@@ -71,11 +86,14 @@ export default function Navbar() {
         }}
       >
         <Fade in={openMenu}>
-          <div className="navWrapper" style={openMenu ? openMenuStyle : { display: "none" }}>
+          <div
+            className="navWrapper"
+            style={openMenu ? openMenuStyle : { display: "none" }}
+          >
             <div className={`${styles.menu} navMenu`}>
               <CloseIcon className={styles.back} onClick={handleOpenMenu} />
 
-              <Link href="/" exact >
+              <Link href="/" exact>
                 <a
                   className={
                     router.pathname == "/" ? styles.activeLink : styles.link

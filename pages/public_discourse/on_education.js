@@ -8,24 +8,8 @@ export default function OnEducation({ data }) {
   const [pageData, setPageData] = useState("");
 
   useEffect(() => {
-    // getData();
     if (data) setPageData(data);
   }, []);
-
-  // const getData = async () => {
-  //   const url = "https://raw.githubusercontent.com/bobotangpy/wbb-fanpage/master/jo/_data/videoData.json";
-  //   const getData = await fetch(url);
-  //   const res = await getData.json();
-  //   let data;
-
-  //   if (res) {
-  //     for (const [key, val] of Object.entries(res)) {
-  //       if (key === "edu") {
-  //         setPageData(val);
-  //       }
-  //     }
-  //   }
-  // }
 
   return (
     <>

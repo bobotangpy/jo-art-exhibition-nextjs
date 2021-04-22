@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -39,7 +38,7 @@ export default function VideoLayout({ data, color }) {
             {item.transcription ? (
               <a href={`http://docs.google.com/gview?url=${item.transcription}`} target="_blank">
                 <button className="transcriptBtn">
-                  See Transciption
+                  See Transcription
                 </button>
               </a>
             ) : (
