@@ -1,12 +1,8 @@
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import StoryboardModal from "../components/StoryboardModal";
 import Footer from "../components/Footer";
 import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 
 const avatarStyle = {
   width: "auto",
@@ -84,10 +80,6 @@ const Cards = ({ name }) => {
 };
 
 export default function FamilyCaseStudies({ chans, lees, wongs }) {
-  const [chansData, setChansData] = useState(chans);
-  const [leesData, setLeesData] = useState(lees);
-  const [wongsData, setWongsData] = useState(wongs);
-
   return (
     <>
       <div className="pageContent fadeIn">
@@ -111,11 +103,11 @@ export default function FamilyCaseStudies({ chans, lees, wongs }) {
           </p>
 
           <div className="flexRow">
-            {chansData && leesData && wongsData ? (
+            {chans && lees && wongs ? (
               <>
-                <Cards data={chansData} name={"Chan"} />
-                <Cards data={leesData} name={"Lee"} />
-                <Cards data={wongsData} name={"Wong"} />
+                <Cards data={chans} name={"Chan"} />
+                <Cards data={lees} name={"Lee"} />
+                <Cards data={wongs} name={"Wong"} />
               </>
             ) : (
               <></>

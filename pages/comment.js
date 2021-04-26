@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import styles from "../styles/Comment.module.scss";
 import Disqus from "disqus-react";

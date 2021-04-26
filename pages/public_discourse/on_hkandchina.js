@@ -1,32 +1,9 @@
-import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import VideoLayout from "../../components/VideoLayout";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 
 export default function OnHkAndChina({ data }) {
-  const [pageData, setPageData] = useState("");
-
-  useEffect(() => {
-    // getData();
-    if (data) setPageData(data);
-  }, []);
-
-  // const getData = async () => {
-  //   const url = "https://raw.githubusercontent.com/bobotangpy/wbb-fanpage/master/jo/_data/videoData.json";
-  //   const getData = await fetch(url);
-  //   const res = await getData.json();
-  //   let data;
-
-  //   if (res) {
-  //     for (const [key, val] of Object.entries(res)) {
-  //       if (key === "hkchina") {
-  //         setPageData(val);
-  //       }
-  //     }
-  //   }
-  // }
-
   return (
     <>
       <div className="pageContent fadeIn">
@@ -48,7 +25,7 @@ export default function OnHkAndChina({ data }) {
         </header>
 
         <div className="textContent" style={{ marginTop: "20px" }}>
-          <VideoLayout data={pageData} color={"#33699f"} />
+          <VideoLayout data={data} color={"#33699f"} />
         </div>
       </div>
       <Footer />

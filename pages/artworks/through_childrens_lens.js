@@ -32,50 +32,41 @@ const Linksss = ({ items }) => {
   ));
 };
 
-export default function ChildrensLens() {
-  const [artworkData, setArtworkData] = useState(null);
+export default function ChildrensLens({ data }) {
   const [activeCat, setActiveCat] = useState(null);
   const [links, setLinks] = useState(null);
 
   useEffect(() => {
-    getData();
     setActiveCat("drawing");
   }, []);
 
   useEffect(() => {
-    if (artworkData)
+    if (data)
       switch (activeCat) {
         case "drawing":
-          Object.values(artworkData).map((items) => {
+          Object.values(data).map((items) => {
             if (items[0].category === "drawing") setLinks(items);
           });
           break;
         case "photography":
-          Object.values(artworkData).map((items) => {
+          Object.values(data).map((items) => {
             if (items[0].category === "photography") setLinks(items);
           });
           break;
         case "creative":
-          Object.values(artworkData).map((items) => {
+          Object.values(data).map((items) => {
             if (items[0].category === "creative") setLinks(items);
           });
           break;
         case "more":
-          Object.values(artworkData).map((items) => {
+          Object.values(data).map((items) => {
             if (items[0].category === "more") setLinks(items);
           });
           break;
         default:
           break;
       }
-  }, [artworkData, activeCat]);
-
-  const getData = async () => {
-    const getData = await fetch("/assets/_data/childrensArtwork.json");
-    const data = await getData.json();
-
-    if (data) setArtworkData(data);
-  };
+  }, [activeCat]);
 
   return (
     <>
@@ -89,7 +80,10 @@ export default function ChildrensLens() {
           </Link>
           <p>Through Children's Lens</p>
         </Breadcrumbs>
-        <header className="pageTitle" style={{ color: "#33699f", marginTop:"30px" }}>
+        <header
+          className="pageTitle"
+          style={{ color: "#33699f", marginTop: "30px" }}
+        >
           Through Children's Lens
         </header>
 
@@ -137,7 +131,7 @@ export default function ChildrensLens() {
             </div>
 
             <div className={styles.right}>
-              {artworkData && links ? <Linksss items={links} /> : <></>}
+              {data && links ? <Linksss items={links} /> : <></>}
             </div>
           </div>
         </div>
@@ -146,3 +140,14 @@ export default function ChildrensLens() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const getData = await fetch(
+    "http://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/childrensArtwork.json"
+  );
+  const data = await getData.json();
+
+  return {
+    props: { data },
+  };
+};
