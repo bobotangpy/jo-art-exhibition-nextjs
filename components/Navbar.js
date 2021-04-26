@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
+import WebHead from "./Head";
 import Link from "next/link";
 import { Fade } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -11,7 +12,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import styles from "../styles/Navbar.module.scss";
-import Head from "next/head";
 
 const openMenuStyle = {
   position: "fixed",
@@ -39,28 +39,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Head>
-        <title>
-          Visualizing the Civic Identity Struggle in Hong Kong: An Art
-          Exhibition
-        </title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KM1PNW677B"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-KM1PNW677B');
-            `,
-          }}
-        />
-      </Head>
+      <WebHead />
 
       <nav className={styles.navbar}>
         <a href="/">
