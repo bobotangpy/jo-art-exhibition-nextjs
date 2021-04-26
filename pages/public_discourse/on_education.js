@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import VideoLayout from "../../components/VideoLayout";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 
 export default function OnEducation({ data }) {
-  const [pageData, setPageData] = useState("");
-
-  useEffect(() => {
-    if (data) setPageData(data);
-  }, []);
-
   return (
     <>
       <div className="pageContent fadeIn">
@@ -32,7 +25,7 @@ export default function OnEducation({ data }) {
         </header>
 
         <div className="textContent" style={{ marginTop: "20px" }}>
-          <VideoLayout data={pageData} color={"#e07e71"} />
+          <VideoLayout data={data} color={"#e07e71"} />
         </div>
       </div>
       <Footer />

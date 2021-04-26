@@ -14,13 +14,17 @@ const cardStyle = {
 };
 
 export default function VideoLayout({ data, color }) {
-
   return (
     data &&
     data.map((item, index) => (
       <Card className="videoCard" key={index} style={cardStyle}>
         <CardContent style={{ display: "flex", flexDirection: "row" }}>
-          <CardMedia className="videoCardMedia" component="iframe" src={item.src} height="330" />
+          <CardMedia
+            className="videoCardMedia"
+            component="iframe"
+            src={item.src}
+            height="330"
+          />
           <div
             style={
               item.transcription
@@ -28,7 +32,7 @@ export default function VideoLayout({ data, color }) {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    width: "500px"
+                    width: "500px",
                   }
                 : { display: "block" }
             }

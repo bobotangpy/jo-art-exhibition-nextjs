@@ -1,3 +1,11 @@
+## Visualizing the Civic Identity Struggle in Hong Kong: An Art Exhibition
+---
+This is an online exhibition website I made for a friend to present her research on the topic mentioned above. 
+
+It is built with next.js and hosted on [Vercel](https://vercel.com).
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

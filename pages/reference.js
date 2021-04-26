@@ -9,10 +9,9 @@ export default function Reference({ data }) {
   const [dataset, setDataSet] = useState(null);
 
   useEffect(() => {
-    // console.log(JSON.parse(data));
-    // console.log(Object.values(JSON.parse(data)));
     setDataSet(Object.values(JSON.parse(data)));
   }, []);
+
   return (
     <>
       <div className="pageContent fadeIn">
@@ -22,7 +21,7 @@ export default function Reference({ data }) {
           {dataset &&
             dataset.map((line, index) => (
               <p key={index}>
-                {line.map((part, index) =>
+                {line.map((part) =>
                   part.includes(">>") ? (
                     <span key={part} style={{ fontStyle: "italic" }}>
                       {part.split(">>")[1]}
@@ -55,7 +54,8 @@ export default function Reference({ data }) {
 }
 
 export async function getStaticProps() {
-  const url = "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/reference.json";
+  const url =
+    "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/reference.json";
   // const url = "http://localhost:3000/assets/_data/reference.json";
   const getData = await fetch(url);
   const data = await getData.text();
