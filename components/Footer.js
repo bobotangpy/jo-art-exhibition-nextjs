@@ -40,6 +40,22 @@ export default function Footer() {
           </label>
         </div>
       </div>
+      <p
+        style={{
+          fontSize: "12px",
+          margin: "2px 20px",
+          textAlign: "right",
+          color: " #fafafa",
+        }}
+      >
+        Developed by{" "}
+        <a
+          href="https://bobotang.best"
+          style={{ color: " #fafafa", cursor: "text" }}
+        >
+          Bobo Tang
+        </a>
+      </p>
     </div>
   );
 }
