@@ -40,14 +40,7 @@ export default function Footer() {
           </label>
         </div>
       </div>
-      <p
-        style={{
-          fontSize: "12px",
-          margin: "2px 20px",
-          textAlign: "right",
-          color: " #fafafa",
-        }}
-      >
+      <p className={styles.hidden}>
         Developed by{" "}
         <a
           href="https://bobotang.best"

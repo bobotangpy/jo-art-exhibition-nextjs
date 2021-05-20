@@ -30,6 +30,13 @@
       }
     }
   }
+
+  .hidden {
+    font-size: 12px;
+    margin: 2px 20px;
+    text-align: right;
+    color: #fafafa;
+  }
 }
 
 /* Mobile */
@@ -39,7 +46,12 @@
   }
 
   .column {
-    padding: 5px 17px !important;
+    padding: 5px 12px !important;
     font-size: 14px;
+  }
+
+  .hidden {
+    margin: -5px 0 !important;
+    background-color: #fafafa;
   }
 }

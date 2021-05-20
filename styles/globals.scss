@@ -176,22 +176,6 @@ p {
 .MuiCardMedia-media {
   max-width: 50%;
 }
-.transcriptBtn {
-  background-color: $bg-color;
-  color: $dark-blue;
-  margin: 30px 15px;
-  padding: 15px 30px;
-  border: 3.5px solid $dark-blue;
-  font-size: 14px;
-  font-weight: bolder;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    background-color: $dark-blue;
-    color: $bg-color;
-    border-color: $dark-blue;
-  }
-}
 
 // Option Buttons - Artwork & Public Discourse
 .btnsDiv {
@@ -318,24 +302,12 @@ p {
   .MuiCardContent-root {
     flex-direction: column !important;
   }
-  .videoCard {
-    padding: 15px !important;
-
-    h3 {
-      font-size: 17px;
-      margin-bottom: 10px;
-      padding-left: 0 !important;
-    }
-  }
   .MuiCardMedia-media {
     max-width: 100% !important;
     height: 60% !important;
   }
   .MuiCardContent-root:last-child {
     padding-bottom: 10px !important;
-  }
-  .transcriptBtn {
-    margin: 15px;
   }
 
   // Interactive Storyboard //

@@ -52,5 +52,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .edu,
+    .hkchina {
+      width: 300px;
+      padding: 20px 35px;
+    }
   }
 }

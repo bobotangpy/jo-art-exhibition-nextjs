@@ -1,0 +1,51 @@
+@import "./_variables.scss";
+
+.videoCard {
+  margin-bottom: 15px;
+  background-color: #fafafa;
+  padding: 15px 30px;
+  border-radius: 0;
+  border: none;
+  font-family: Marko One;
+  font-weight: normal;
+
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .transcriptBtn {
+    background-color: $bg-color;
+    color: $dark-blue;
+    margin: 30px 15px;
+    padding: 15px 30px;
+    border: 3.5px solid $dark-blue;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $dark-blue;
+      color: $bg-color;
+      border-color: $dark-blue;
+    }
+  }
+}
+
+
+/* Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  .videoCard {
+    padding: 15px !important;
+
+    h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      padding-left: 0 !important;
+    }
+
+    .desc {
+      width: 280px !important;
+    }
+  }
+}
