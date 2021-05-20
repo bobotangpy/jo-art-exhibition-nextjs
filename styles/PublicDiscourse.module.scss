@@ -60,3 +60,12 @@
     }
   }
 }
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 767px),
+  (min-width: 768px) and (max-width: 1024px) {
+  .edu,
+  .hkchina {
+    padding: 20px 30px !important;
+  }
+}
