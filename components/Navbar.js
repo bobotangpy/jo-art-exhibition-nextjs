@@ -48,12 +48,12 @@ export default function Navbar() {
       </Head>
 
       <nav className={styles.navbar}>
-        <a href="/">
+        <Link href="/">
           <p>
             Visualizing the Civic Identity Struggle in Hong Kong: <br />
             An Art Exhibition
           </p>
-        </a>
+        </Link>
         <MenuIcon className={styles.menuIcon} onClick={handleOpenMenu} />
       </nav>
 
@@ -75,28 +75,27 @@ export default function Navbar() {
             <div className={`${styles.menu} navMenu`}>
               <CloseIcon className={styles.back} onClick={handleOpenMenu} />
 
-              <Link href="/" exact >
-                <a
-                  className={
-                    router.pathname == "/" ? styles.activeLink : styles.link
-                  }
-                  onClick={handleOpenMenu}
-                >
-                  Home
-                </a>
+              <Link
+                href="/"
+                exact
+                onClick={handleOpenMenu}
+                className={
+                  router.pathname == "/" ? styles.activeLink : styles.link
+                }
+              >
+                Home
               </Link>
 
-              <Link href="/background">
-                <a
-                  className={
-                    router.pathname == "/background"
-                      ? styles.activeLink
-                      : styles.link
-                  }
-                  onClick={handleOpenMenu}
-                >
-                  Background
-                </a>
+              <Link
+                href="/background"
+                onClick={handleOpenMenu}
+                className={
+                  router.pathname == "/background"
+                    ? styles.activeLink
+                    : styles.link
+                }
+              >
+                Background
               </Link>
 
               <Accordion style={{ alignSelf: "center", width: "fit-content" }}>
@@ -109,44 +108,41 @@ export default function Navbar() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Link href="/public_discourse">
-                    <a
-                      className={
-                        router.pathname == "/public_discourse"
-                          ? styles.activeLink
-                          : styles.link
-                      }
-                      onClick={handleOpenMenu}
-                    >
-                      Public Discourse
-                    </a>
+                  <Link
+                    href="/public_discourse"
+                    onClick={handleOpenMenu}
+                    className={
+                      router.pathname == "/public_discourse"
+                        ? styles.activeLink
+                        : styles.link
+                    }
+                  >
+                    Public Discourse
                   </Link>
                 </AccordionSummary>
                 <AccordionDetails style={accordionStyle}>
-                  <Link href="/public_discourse/on_education">
-                    <a
-                      className={
-                        router.pathname == "/public_discourse/on_education"
-                          ? styles.activeLink
-                          : styles.link
-                      }
-                      onClick={handleOpenMenu}
-                    >
-                      On Education
-                    </a>
+                  <Link
+                    href="/public_discourse/on_education"
+                    onClick={handleOpenMenu}
+                    className={
+                      router.pathname == "/public_discourse/on_education"
+                        ? styles.activeLink
+                        : styles.link
+                    }
+                  >
+                    On Education
                   </Link>
 
-                  <Link href="/public_discourse/on_hkandchina">
-                    <a
-                      className={
-                        router.pathname == "/public_discourse/on_hkandchina"
-                          ? styles.activeLink
-                          : styles.link
-                      }
-                      onClick={handleOpenMenu}
-                    >
-                      On Hong Kong and China
-                    </a>
+                  <Link
+                    href="/public_discourse/on_hkandchina"
+                    onClick={handleOpenMenu}
+                    className={
+                      router.pathname == "/public_discourse/on_hkandchina"
+                        ? styles.activeLink
+                        : styles.link
+                    }
+                  >
+                    On Hong Kong and China
                   </Link>
                 </AccordionDetails>
               </Accordion>
@@ -161,98 +157,91 @@ export default function Navbar() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Link href="/artworks">
-                    <a
-                      className={
-                        router.pathname == "/artworks"
-                          ? styles.activeLink
-                          : styles.link
-                      }
-                      onClick={handleOpenMenu}
-                    >
-                      Artworks
-                    </a>
+                  <Link
+                    href="/artwork"
+                    onClick={handleOpenMenu}
+                    className={
+                      router.pathname == "/artwork"
+                        ? styles.activeLink
+                        : styles.link
+                    }
+                  >
+                    Artworks
                   </Link>
                 </AccordionSummary>
                 <AccordionDetails style={accordionStyle}>
-                  <Link href="/artworks/through_adults_lens">
-                    <a
-                      className={
-                        router.pathname == "/artworks/through_adults_lens"
-                          ? styles.activeLink
-                          : styles.link
-                      }
-                      onClick={handleOpenMenu}
-                    >
-                      Through Adult's Lens
-                    </a>
+                  <Link
+                    href="/artwork/through_adults_lens"
+                    onClick={handleOpenMenu}
+                    className={
+                      router.pathname == "/artwork/through_adults_lens"
+                        ? styles.activeLink
+                        : styles.link
+                    }
+                  >
+                    Through Adult's Lens
                   </Link>
 
-                  <Link href="/artworks/through_childrens_lens">
-                    <a
-                      className={
-                        router.pathname == "/artworks/through_childrens_lens"
-                          ? styles.activeLink
-                          : styles.link
-                      }
-                      onClick={handleOpenMenu}
-                    >
-                      Through Children's Lens
-                    </a>
+                  <Link
+                    href="/artwork/through_childrens_lens"
+                    onClick={handleOpenMenu}
+                    className={
+                      router.pathname == "/artwork/through_childrens_lens"
+                        ? styles.activeLink
+                        : styles.link
+                    }
+                  >
+                    Through Children's Lens
                   </Link>
                 </AccordionDetails>
               </Accordion>
 
-              <Link href="/local_global_responses">
-                <a
-                  className={
-                    router.pathname == "/local_global_responses"
-                      ? styles.activeLink
-                      : styles.link
-                  }
-                  onClick={handleOpenMenu}
-                >
-                  Local and Global Responses
-                </a>
+              <Link
+                href="/local_global_response"
+                onClick={handleOpenMenu}
+                className={
+                  router.pathname == "/local_global_response"
+                    ? styles.activeLink
+                    : styles.link
+                }
+              >
+                Local and Global Response
               </Link>
 
-              <Link href="/family_case_studies">
-                <a
-                  className={
-                    router.pathname == "/family_case_studies"
-                      ? styles.activeLink
-                      : styles.link
-                  }
-                  onClick={handleOpenMenu}
-                >
-                  3 Family Case Studies
-                </a>
+              <Link
+                href="/interactive_storyboard"
+                onClick={handleOpenMenu}
+                className={
+                  router.pathname == "/interactive_storyboard"
+                    ? styles.activeLink
+                    : styles.link
+                }
+              >
+                Interactive Storyboard
               </Link>
 
-              <Link href="/comment">
-                <a
-                  className={
-                    router.pathname == "/comment"
-                      ? styles.activeLink
-                      : styles.link
-                  }
-                  onClick={handleOpenMenu}
-                >
-                  Comment
-                </a>
+              <Link
+                href="/comment"
+                onClick={handleOpenMenu}
+                className={
+                  router.pathname == "/comment"
+                    ? styles.activeLink
+                    : styles.link
+                }
+              >
+                Comment
               </Link>
 
-              <Link href="/reference">
-                <a
-                  className={
-                    router.pathname == "/reference"
-                      ? styles.activeLink
-                      : styles.link
-                  }
-                  onClick={handleOpenMenu}
-                >
-                  Reference
-                </a>
+              <Link
+                href="/reference"
+                onClick={handleOpenMenu}
+                className={
+                  router.pathname == "/reference"
+                    ? styles.activeLink
+                    : styles.link
+                }
+              >
+                Reference
               </Link>
             </div>
           </div>
