@@ -155,10 +155,10 @@ export default function Navbar() {
                   id="panel1a-header"
                 >
                   <Link
-                    href="/artwork"
+                    href="/artworks"
                     onClick={handleOpenMenu}
                     className={
-                      router.pathname == "/artwork"
+                      router.pathname == "/artworks"
                         ? styles.activeLink
                         : styles.link
                     }
@@ -194,22 +194,22 @@ export default function Navbar() {
               </Accordion>
 
               <Link
-                href="/local_global_response"
+                href="/local_global_responses"
                 onClick={handleOpenMenu}
                 className={
-                  router.pathname == "/local_global_response"
+                  router.pathname == "/local_global_responses"
                     ? styles.activeLink
                     : styles.link
                 }
               >
-                Local and Global Response
+                Local and Global Responses
               </Link>
 
               <Link
-                href="/interactive_storyboard"
+                href="/family_case_studies"
                 onClick={handleOpenMenu}
                 className={
-                  router.pathname == "/interactive_storyboard"
+                  router.pathname == "/family_case_studies"
                     ? styles.activeLink
                     : styles.link
                 }
