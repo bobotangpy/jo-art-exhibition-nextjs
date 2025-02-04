@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { SRLWrapper } from "simple-react-lightbox";
 import Footer from "../../components/Footer";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Link from "@material-ui/core/Link";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "@mui/material/Link";
 import styles from "../../styles/AdultsLens.module.scss";
 
 const options = {

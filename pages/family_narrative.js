@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import StoryboardModal from "../components/StoryboardModal";
 import Footer from "../components/Footer";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
 
 const Content = ({ data, family }) => {
   const [openModal, setOpenModal] = useState(false);

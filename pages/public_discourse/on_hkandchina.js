@@ -1,7 +1,7 @@
 import Footer from "../../components/Footer";
 import VideoLayout from "../../components/VideoLayout";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Link from "@material-ui/core/Link";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "@mui/material/Link";
 
 export default function OnHkAndChina({ data }) {
   return (

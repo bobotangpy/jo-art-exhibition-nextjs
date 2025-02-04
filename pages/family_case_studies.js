@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Footer from "../components/Footer";
-import Avatar from "@material-ui/core/Avatar";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+import Avatar from "@mui/material/Avatar";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
 const avatarStyle = {
   width: "auto",

@@ -1,5 +1,5 @@
-import { Modal, Divider, Fade, Backdrop } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
+import { Modal, Divider, Fade, Backdrop } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import styles from "../styles/StoryboardModal.module.scss";
 
 export default function StoryboardModal({ openModal, handleOpenModal, data }) {

@@ -2,15 +2,15 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import WebHead from "./Head";
 import Link from "next/link";
-import { Fade } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
+import { Fade } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Modal from "@mui/material/Modal";
+import Backdrop from "@mui/material/Backdrop";
 import styles from "../styles/Navbar.module.scss";
 
 const openMenuStyle = {

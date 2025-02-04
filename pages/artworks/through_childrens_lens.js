@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Link from "@material-ui/core/Link";
-import BrushIcon from "@material-ui/icons/Brush";
-import CameraAltIcon from "@material-ui/icons/CameraAlt";
-import MoreIcon from "@material-ui/icons/More";
-import { Category } from "@material-ui/icons";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "@mui/material/Link";
+import BrushIcon from "@mui/icons-material/Brush";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import MoreIcon from "@mui/icons-material/More";
+import { Category } from "@mui/icons-material";
 import styles from "../../styles/ChildrensLens.module.scss";
 
 const linkStyle = {
