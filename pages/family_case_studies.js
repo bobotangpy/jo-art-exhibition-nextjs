@@ -24,12 +24,6 @@ const constentStyle = {
   cursor: "pointer",
 };
 
-// const btnStyle = {
-//   color: "#2d3757",
-//   fontFamily: "Muli",
-//   padding: "3px 5px",
-// };
-
 const Cards = ({ name }) => {
   const AvatarIcon = ({ name }) => {
     return name[0] === "C" ? (
@@ -124,9 +118,6 @@ export const getStaticProps = async () => {
   const getData = await fetch(
     "https://raw.githubusercontent.com/bobotangpy/home/master/docs/webData/jo/_data/storyboardData.json"
   );
-  // const getData = await fetch(
-  //   "http://localhost:3000/assets/_data/storyboardData.json"
-  // );
   const res = await getData.json();
   let chans, lees, wongs;
 
