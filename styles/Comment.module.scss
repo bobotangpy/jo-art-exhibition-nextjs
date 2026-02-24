@@ -1,4 +1,4 @@
-@import "./_variables.scss";
+@use "./_variables" as *;
 
 .form {
   padding-left: 30px;
